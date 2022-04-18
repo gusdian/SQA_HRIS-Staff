@@ -32,7 +32,7 @@ public class StepDefinition {
 
 	private static WebDriver driver;
 	private LoginPage loginPage;
-	private PenilaianPage penilaianPage;
+	private PenilaianPage nilaiPage;
 	
 	ExtentTest extentTest;
 	static ExtentReports reports = new ExtentReports("src/main/resources/TestReport.html");
@@ -45,7 +45,7 @@ public class StepDefinition {
 	public void initializeObjects() {
 		DriverSingleton.getInstance(configProp.getBrowser());
 		loginPage = new LoginPage();
-		penilaianPage = new PenilaianPage();
+		nilaiPage = new PenilaianPage();
 		
 		TestCases[] tests = TestCases.values();
 		extentTest = reports.startTest(tests[Utils.testCount].getTestName());
@@ -108,16 +108,40 @@ public class StepDefinition {
     @When("User klik tombol Action")
     public void user_klik_tombol_action() {
     	tunggu(1);
-    	assertEquals(configProp.getTxtNilai(), penilaianPage.getTxtNilai());
+    	nilaiPage.menuPenilaian();;
+    	tunggu(1);
+    	assertEquals(configProp.getTxtNilai(), nilaiPage.getTxtNilai());
     	extentTest.log(LogStatus.PASS, "User masuk halaman penilaian");
     	tunggu(2);
     }
     
     @Then("User kembali ke halaman sebelumnya")
     public void user_kembali_ke_halaman_sebelumnya() {
-    	assertEquals(configProp.getTxtNilai(), penilaianPage.getTxtNilai());
+    	nilaiPage.penilaianKosong();
+    	tunggu(1);
+    	assertEquals(configProp.getTxtKosong(), nilaiPage.getTxtKosong());
     	extentTest.log(LogStatus.PASS, "Tabel penilaian kosong");
-    	penilaianPage.Back();
+    	tunggu(1);
+    	nilaiPage.Back();
+    }
+    
+    @When("User klik button action")
+    public void user_klik_button_action() {
+    	nilaiPage.beriNilai();
+    	tunggu(2);
+    }
+    
+    @Then("User mengisi penilaian")
+    public void user_mengisi_penilaian() {
+    	nilaiPage.isiFormNilai(configProp.getActResult1(), configProp.getActResult2(), configProp.getActResult3(), configProp.getActResult4(), configProp.getAspir());
+    	extentTest.log(LogStatus.PASS, "User dapat mengisi penilaian");
+    }
+    
+    @Then("User berhasil memberi nilai")
+    public void user_berhasil_memberi_nilai() {
+    	tunggu(1);
+    	assertEquals(configProp.getTxtBerhasil(), nilaiPage.getTxtBerhasil());
+    	extentTest.log(LogStatus.PASS, "Berhasil memberi nilai");
     }
     
     public void tunggu(int detik) {
