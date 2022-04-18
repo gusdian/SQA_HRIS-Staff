@@ -61,7 +61,7 @@ public class StepDefinition {
 		driver.quit();
 	}
 	
-	
+	//----------------------( Login Page )----------------------//
 	@Given("User mengakses url")
 	public void user_akses_url() {
 		driver = DriverSingleton.getDriver();
@@ -96,7 +96,13 @@ public class StepDefinition {
     	tunggu(1);
     	assertEquals(configProp.getTxtWrongEmailPass(), loginPage.getTxtWrongEmailPass());
     	extentTest.log(LogStatus.PASS, "User gagal login");
+    	tunggu(2);
+    	loginPage.submitLoginValid(configProp.getEmail(), configProp.getPassword());
     }
+    
+    //----------------------( ........ Page )----------------------//
+    
+    
     
     public void tunggu(int detik) {
 		try {
