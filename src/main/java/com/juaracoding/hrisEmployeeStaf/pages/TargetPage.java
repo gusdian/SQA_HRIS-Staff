@@ -169,13 +169,46 @@ private WebDriver driver;
 		Filter2.sendKeys(filter2);
 	}
 	
-	public void addTarget(String name, String starttgl) {
+	public void addTarget(String name, String starttgl, String endtgl, int listcount, String weight, String param1, String tar1, String param2, String tar2, int list3, String filter3, int list4, String filter4) {
 		AddTgt.click();
 		TargetName.sendKeys(name);
 		StartDate.sendKeys(Keys.chord(Keys.CONTROL+"a", starttgl));
 		StartDate.sendKeys(starttgl);
 		StartDate.sendKeys(Keys.ENTER);
-		EndDate.click();
+		EndDate.sendKeys(Keys.chord(Keys.CONTROL+"a", endtgl));
+		EndDate.sendKeys(endtgl);
+		EndDate.sendKeys(Keys.ENTER);
+		ReviewCount.click();
+		ListReviewCount.get(listcount).click();
+		Submit_1.click();
+		Weight.sendKeys(weight);
+		Mundur2.click();
+		Submit_2.click();
+		Parameter1.sendKeys(param1);
+		Target1.sendKeys(tar1);
+		Submit_4.click();
+		Delete.click();
+		NextTarget.click();
+		Parameter2.sendKeys(param2);
+		Target2.sendKeys(tar2);
+		Submit_5.click();
+		Entries3.click();
+		ListEntries3.get(list3).click();
+		Filter3.sendKeys(Keys.chord(Keys.CONTROL+"a"));
+		Filter3.sendKeys(filter3);
+		Submit_6.click();
+		Entries4.click();
+		ListEntries4.get(list4).click();
+		Filter4.sendKeys(Keys.chord(Keys.CONTROL+"a"));
+		Filter4.sendKeys(filter4);
+		Refressh.click();
+		Mundur3.click();
+		Submit_7.click();
+		Submit_8.click();
+	}
+	
+	public String getTxtassignTarget() {
+		return txtAssignTarget.getText();
 	}
 	
 	public void tunggu() {
