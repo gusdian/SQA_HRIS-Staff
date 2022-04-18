@@ -29,6 +29,72 @@ public class ConfigurationProperties {
 	@Value("${txtWrongEmailPass}")
 	private String txtWrongEmailPass;
 	
+	@Value("${list}")
+	private String list;
+	
+	@Value("${listSub}")
+	private String listSub;
+	
+	@Value("${list1}")
+	private String list1;
+	
+	@Value("${filter1}")
+	private String filter1;
+	
+	@Value("${edit1}")
+	private String edit1;
+	
+	@Value("${edit2}")
+	private String edit2;
+	
+	@Value("${list2}")
+	private String list2;
+	
+	@Value("${filter2}")
+	private String filter2;
+	
+	@Value("${name}")
+	private String name;
+	
+	@Value("${starttgl}")
+	private String starttgl;
+	
+	@Value("${endtgl}")
+	private String endtgl;
+	
+	@Value("${listcount}")
+	private String listcount;
+	
+	@Value("${weight}")
+	private String weight;
+	
+	@Value("${param1}")
+	private String param1;
+	
+	@Value("${tar1}")
+	private String tar1;
+	
+	@Value("${param2}")
+	private String param2;
+	
+	@Value("${tar2}")
+	private String tar2;
+
+	@Value("${list3}")
+	private String list3;
+	
+	@Value("${filter3}")
+	private String filter3;
+	
+	@Value("${list4}")
+	private String list4;
+	
+	@Value("${filter4}")
+	private String filter4;
+	
+	@Value("${txtAssignTarget}")
+	private String txtAssignTarget;
+	
 	@Value("${txtNilai}")
 	private String txtNilai;
 	
@@ -83,6 +149,182 @@ public class ConfigurationProperties {
 		return txtWrongEmailPass;
 	}
 	
+	public String getList() {
+		return list;
+	}
+
+	public void setList(String list) {
+		this.list = list;
+	}
+
+	public String getListSub() {
+		return listSub;
+	}
+
+	public void setListSub(String listSub) {
+		this.listSub = listSub;
+	}
+
+	public String getList1() {
+		return list1;
+	}
+
+	public void setList1(String list1) {
+		this.list1 = list1;
+	}
+
+	public String getFilter1() {
+		return filter1;
+	}
+
+	public void setFilter1(String filter1) {
+		this.filter1 = filter1;
+	}
+
+	public String getEdit1() {
+		return edit1;
+	}
+
+	public void setEdit1(String edit1) {
+		this.edit1 = edit1;
+	}
+
+	public String getEdit2() {
+		return edit2;
+	}
+
+	public void setEdit2(String edit2) {
+		this.edit2 = edit2;
+	}
+
+	public String getList2() {
+		return list2;
+	}
+
+	public void setList2(String list2) {
+		this.list2 = list2;
+	}
+
+	public String getFilter2() {
+		return filter2;
+	}
+
+	public void setFilter2(String filter2) {
+		this.filter2 = filter2;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getStarttgl() {
+		return starttgl;
+	}
+
+	public void setStarttgl(String starttgl) {
+		this.starttgl = starttgl;
+	}
+
+	public String getEndtgl() {
+		return endtgl;
+	}
+
+	public void setEndtgl(String endtgl) {
+		this.endtgl = endtgl;
+	}
+
+	public String getListcount() {
+		return listcount;
+	}
+
+	public void setListcount(String listcount) {
+		this.listcount = listcount;
+	}
+
+	public String getWeight() {
+		return weight;
+	}
+
+	public void setWeight(String weight) {
+		this.weight = weight;
+	}
+
+	public String getParam1() {
+		return param1;
+	}
+
+	public void setParam1(String param1) {
+		this.param1 = param1;
+	}
+
+	public String getTar1() {
+		return tar1;
+	}
+
+	public void setTar1(String tar1) {
+		this.tar1 = tar1;
+	}
+
+	public String getParam2() {
+		return param2;
+	}
+
+	public void setParam2(String param2) {
+		this.param2 = param2;
+	}
+
+	public String getTar2() {
+		return tar2;
+	}
+
+	public void setTar2(String tar2) {
+		this.tar2 = tar2;
+	}
+
+	public String getList3() {
+		return list3;
+	}
+
+	public void setList3(String list3) {
+		this.list3 = list3;
+	}
+
+	public String getFilter3() {
+		return filter3;
+	}
+
+	public void setFilter3(String filter3) {
+		this.filter3 = filter3;
+	}
+
+	public String getList4() {
+		return list4;
+	}
+
+	public void setList4(String list4) {
+		this.list4 = list4;
+	}
+
+	public String getFilter4() {
+		return filter4;
+	}
+
+	public void setFilter4(String filter4) {
+		this.filter4 = filter4;
+	}
+
+	public String getTxtAssignTarget() {
+		return txtAssignTarget;
+	}
+
+	public void setTxtAssignTarget(String txtAssignTarget) {
+		this.txtAssignTarget = txtAssignTarget;
+	}
+
 	public String getTxtNilai() {
 		return txtNilai;
 	}
