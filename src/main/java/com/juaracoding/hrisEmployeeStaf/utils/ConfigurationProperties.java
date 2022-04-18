@@ -35,6 +35,24 @@ public class ConfigurationProperties {
 	@Value("${txtKosong}")
 	private String txtKosong;
 	
+	@Value("${actResult1}")
+	private String actResult1;
+	
+	@Value("${actResult2}")
+	private String actResult2;
+	
+	@Value("${actResult3}")
+	private String actResult3;
+	
+	@Value("${actResult4}")
+	private String actResult4;
+	
+	@Value("${aspir}")
+	private String aspir;
+	
+	@Value("${txtBerhasil}")
+	private String txtBerhasil;
+	
 //----------------------Declaration Getter-----------------------------------
 	
 	public String getBrowser() {
@@ -73,4 +91,27 @@ public class ConfigurationProperties {
 		return txtKosong;
 	}
 	
+	public String getActResult1() {
+		return actResult1;
+	}
+	
+	public String getActResult2() {
+		return actResult2;
+	}
+	
+	public String getActResult3() {
+		return actResult3;
+	}
+	
+	public String getActResult4() {
+		return actResult4;
+	}
+	
+	public String getAspir() {
+		return aspir;
+	}
+	
+	public String getTxtBerhasil() {
+		return txtBerhasil;
+	}
 }
