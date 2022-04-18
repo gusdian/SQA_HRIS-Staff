@@ -29,6 +29,12 @@ public class ConfigurationProperties {
 	@Value("${txtWrongEmailPass}")
 	private String txtWrongEmailPass;
 	
+	@Value("${txtNilai}")
+	private String txtNilai;
+	
+	@Value("${txtKosong}")
+	private String txtKosong;
+	
 //----------------------Declaration Getter-----------------------------------
 	
 	public String getBrowser() {
@@ -57,6 +63,14 @@ public class ConfigurationProperties {
 
 	public String getTxtWrongEmailPass() {
 		return txtWrongEmailPass;
+	}
+	
+	public String getTxtNilai() {
+		return txtNilai;
+	}
+	
+	public String getTxtKosong() {
+		return txtKosong;
 	}
 	
 }

@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import com.juaracoding.hrisEmployeeStaf.config.AutomationFrameworkConfig;
 import com.juaracoding.hrisEmployeeStaf.drivers.DriverSingleton;
 import com.juaracoding.hrisEmployeeStaf.pages.LoginPage;
+import com.juaracoding.hrisEmployeeStaf.pages.PenilaianPage;
 import com.juaracoding.hrisEmployeeStaf.utils.ConfigurationProperties;
 import com.juaracoding.hrisEmployeeStaf.utils.Constants;
 import com.juaracoding.hrisEmployeeStaf.utils.TestCases;
@@ -31,6 +32,7 @@ public class StepDefinition {
 
 	private static WebDriver driver;
 	private LoginPage loginPage;
+	private PenilaianPage penilaianPage;
 	
 	ExtentTest extentTest;
 	static ExtentReports reports = new ExtentReports("src/main/resources/TestReport.html");
@@ -43,6 +45,7 @@ public class StepDefinition {
 	public void initializeObjects() {
 		DriverSingleton.getInstance(configProp.getBrowser());
 		loginPage = new LoginPage();
+		penilaianPage = new PenilaianPage();
 		
 		TestCases[] tests = TestCases.values();
 		extentTest = reports.startTest(tests[Utils.testCount].getTestName());
@@ -100,9 +103,22 @@ public class StepDefinition {
     	loginPage.submitLoginValid(configProp.getEmail(), configProp.getPassword());
     }
     
-    //----------------------( ........ Page )----------------------//
+    //----------------------( Penilaian Page )----------------------//
     
+    @When("User klik tombol Action")
+    public void user_klik_tombol_action() {
+    	tunggu(1);
+    	assertEquals(configProp.getTxtNilai(), penilaianPage.getTxtNilai());
+    	extentTest.log(LogStatus.PASS, "User masuk halaman penilaian");
+    	tunggu(2);
+    }
     
+    @Then("User kembali ke halaman sebelumnya")
+    public void user_kembali_ke_halaman_sebelumnya() {
+    	assertEquals(configProp.getTxtNilai(), penilaianPage.getTxtNilai());
+    	extentTest.log(LogStatus.PASS, "Tabel penilaian kosong");
+    	penilaianPage.Back();
+    }
     
     public void tunggu(int detik) {
 		try {
