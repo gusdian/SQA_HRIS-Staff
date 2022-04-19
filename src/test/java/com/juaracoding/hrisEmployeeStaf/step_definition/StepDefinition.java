@@ -120,7 +120,7 @@ public class StepDefinition {
     @Then("Staff Memilih Template Target")
     public void staff_memilih_template_target() {
     	tunggu(1);
-    	targetPage.IndexTarget(configProp.getList1(), configProp.getFilter1(), configProp.getEdit1(), configProp.getEdit2(), configProp.getList2(), configProp.getFilter2());
+    	targetPage.IndexTarget(configProp.getList1(), configProp.getFilter1(), configProp.getEdit2(), configProp.getList2(), configProp.getFilter2());
     	extentTest.log(LogStatus.PASS, "Staff Memilih Template Target");
     }
     

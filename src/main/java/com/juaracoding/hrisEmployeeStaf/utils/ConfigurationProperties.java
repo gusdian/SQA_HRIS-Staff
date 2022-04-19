@@ -35,9 +35,6 @@ public class ConfigurationProperties {
 	@Value("${filter1}")
 	private String filter1;
 	
-	@Value("${edit1}")
-	private int edit1;
-	
 	@Value("${edit2}")
 	private int edit2;
 	
@@ -163,14 +160,6 @@ public class ConfigurationProperties {
 
 	public void setFilter1(String filter1) {
 		this.filter1 = filter1;
-	}
-
-	public int getEdit1() {
-		return edit1;
-	}
-
-	public void setEdit1(int edit1) {
-		this.edit1 = edit1;
 	}
 
 	public int getEdit2() {

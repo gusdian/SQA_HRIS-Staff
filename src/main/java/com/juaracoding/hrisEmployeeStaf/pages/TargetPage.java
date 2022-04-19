@@ -3,6 +3,7 @@ package com.juaracoding.hrisEmployeeStaf.pages;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,8 +36,8 @@ private WebDriver driver;
 	@FindBy(css = "#table_filter > label > input")
 	WebElement Filter1;
 	
-	@FindBy(xpath = "//*[@title='Edit Data']")
-	List<WebElement>EditData1;
+	@FindBy(css = "#table > tbody > tr > td:nth-child(3) > a")
+	WebElement EditData1;
 	
 	@FindBy(xpath = "//*[@class='btn btn-danger']")
 	WebElement Mundur1;
@@ -77,7 +78,7 @@ private WebDriver driver;
 	@FindBy(id = "Weight")
 	WebElement Weight;
 	
-	@FindBy(xpath = "//*[@class='btn btn-primary']")
+	@FindBy(css = "#tab-category > div > div > div > form > div.row > div > button")
 	WebElement Submit_2;
 	
 	@FindBy(xpath = "//*[@class='btn btn-danger']")
@@ -86,7 +87,7 @@ private WebDriver driver;
 	@FindBy(xpath = "//*[@class='btn btn-primary']")
 	WebElement Submit_3;
 	
-	@FindBy(id = "Objective_name")
+	@FindBy(id = "Objective_Name")
 	WebElement Parameter1;
 	
 	@FindBy(id = "Objective_Description")
@@ -95,13 +96,13 @@ private WebDriver driver;
 	@FindBy(xpath = "//*[@class='btn btn-primary']")
 	WebElement Submit_4;
 	
-	@FindBy(xpath = "btn btn-danger btn-icon btn-circle")
+	@FindBy(css = "#table > tbody > tr > td:nth-child(4) > a")
 	WebElement Delete;
 	
-	@FindBy(css = "#content > div:nth-child(7) > div > ul > li:nth-child(2) > a > span.d-sm-block.d-none")
+	@FindBy(css = "#content > div:nth-child(8) > div > ul > li:nth-child(2)")
 	WebElement NextTarget;
 	
-	@FindBy(id = "Objective_name")
+	@FindBy(id = "Objective_Name")
 	WebElement Parameter2;
 	
 	@FindBy(id = "Objective_Description")
@@ -119,7 +120,7 @@ private WebDriver driver;
 	@FindBy(css = "#table_filter > label > input")
 	WebElement Filter3;
 	
-	@FindBy(xpath = "//*[@class='btn btn-success]")
+	@FindBy(css = "#tab-category > div > div:nth-child(5) > div > a")
 	WebElement Submit_6;
 	
 	@FindBy(css = "#table1_length > label > select")
@@ -137,7 +138,7 @@ private WebDriver driver;
 	@FindBy(xpath = "//*[@class='btn btn-danger']")
 	WebElement Mundur3;
 	
-	@FindBy(xpath = "//*[@class='btn btn-success]")
+	@FindBy(css = "#tab-category > div > div:nth-child(5) > div > a")
 	WebElement Submit_7;
 	
 	@FindBy(xpath = "//*[@class='btn btn-block btn-primary']")	
@@ -154,7 +155,7 @@ private WebDriver driver;
 		ListSubMenu.click();
 	}
 	
-	public void IndexTarget(int list1, String filter1, int edit1, int edit2, int list2, String filter2) {
+	public void IndexTarget(int list1, String filter1, int edit2, int list2, String filter2) {
 		tunggu();
 		Entries1.click();
 		ListEntries1.get(list1).click();
@@ -162,7 +163,7 @@ private WebDriver driver;
 		Filter1.sendKeys(filter1);
 		Filter1.sendKeys(Keys.ENTER);
 		tunggu();
-		EditData1.get(edit1).click();
+		EditData1.click();
 		tunggu();
 		Mundur1.click();
 		tunggu();
@@ -191,25 +192,29 @@ private WebDriver driver;
 		Submit_1.click();
 		tunggu();
 		Weight.sendKeys(weight);
-		Mundur2.click();
 		Submit_2.click();
 		tunggu();
+		Mundur2.click();
+		Submit_3.click();
 		Parameter1.sendKeys(param1);
 		Target1.sendKeys(tar1);
 		tunggu();
 		Submit_4.click();
+		scroll();
 		tunggu();
 		Delete.click();
 		NextTarget.click();
 		Parameter2.sendKeys(param2);
 		Target2.sendKeys(tar2);
 		Submit_5.click();
+		scroll();
 		tunggu();
 		Entries3.click();
 		ListEntries3.get(list3).click();
 		Filter3.sendKeys(Keys.chord(Keys.CONTROL+"a"));
 		Filter3.sendKeys(filter3);
 		Filter3.sendKeys(Keys.ENTER);
+		tunggu();
 		Submit_6.click();
 		tunggu();
 		Entries4.click();
@@ -234,5 +239,10 @@ private WebDriver driver;
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void scroll() {
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+		je.executeScript("window.scrollBy(0,500)");
 	}
 }
