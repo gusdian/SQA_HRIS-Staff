@@ -119,6 +119,12 @@ public class ConfigurationProperties {
 	@Value("${txtBerhasil}")
 	private String txtBerhasil;
 	
+	@Value("${txtPA360}")
+	private String txtPA360;
+	
+	@Value("${search}")
+	private String search;
+	
 //----------------------Declaration Getter-----------------------------------
 	
 	public String getBrowser() {
@@ -355,5 +361,13 @@ public class ConfigurationProperties {
 	
 	public String getTxtBerhasil() {
 		return txtBerhasil;
+	}
+	
+	public String getTxtPA360() {
+		return txtPA360;
+	}
+
+	public String getSearch() {
+		return search;
 	}
 }
