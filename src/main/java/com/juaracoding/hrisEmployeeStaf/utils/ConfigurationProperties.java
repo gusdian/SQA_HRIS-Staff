@@ -30,25 +30,25 @@ public class ConfigurationProperties {
 	private String txtWrongEmailPass;
 	
 	@Value("${list}")
-	private String list;
+	private int list;
 	
 	@Value("${listSub}")
-	private String listSub;
+	private int listSub;
 	
 	@Value("${list1}")
-	private String list1;
+	private int list1;
 	
 	@Value("${filter1}")
 	private String filter1;
 	
 	@Value("${edit1}")
-	private String edit1;
+	private int edit1;
 	
 	@Value("${edit2}")
-	private String edit2;
+	private int edit2;
 	
 	@Value("${list2}")
-	private String list2;
+	private int list2;
 	
 	@Value("${filter2}")
 	private String filter2;
@@ -63,7 +63,7 @@ public class ConfigurationProperties {
 	private String endtgl;
 	
 	@Value("${listcount}")
-	private String listcount;
+	private int listcount;
 	
 	@Value("${weight}")
 	private String weight;
@@ -81,13 +81,13 @@ public class ConfigurationProperties {
 	private String tar2;
 
 	@Value("${list3}")
-	private String list3;
+	private int list3;
 	
 	@Value("${filter3}")
 	private String filter3;
 	
 	@Value("${list4}")
-	private String list4;
+	private int list4;
 	
 	@Value("${filter4}")
 	private String filter4;
@@ -149,27 +149,27 @@ public class ConfigurationProperties {
 		return txtWrongEmailPass;
 	}
 	
-	public String getList() {
+	public int getList() {
 		return list;
 	}
 
-	public void setList(String list) {
+	public void setList(int list) {
 		this.list = list;
 	}
 
-	public String getListSub() {
+	public int getListSub() {
 		return listSub;
 	}
 
-	public void setListSub(String listSub) {
+	public void setListSub(int listSub) {
 		this.listSub = listSub;
 	}
 
-	public String getList1() {
+	public int getList1() {
 		return list1;
 	}
 
-	public void setList1(String list1) {
+	public void setList1(int list1) {
 		this.list1 = list1;
 	}
 
@@ -181,27 +181,27 @@ public class ConfigurationProperties {
 		this.filter1 = filter1;
 	}
 
-	public String getEdit1() {
+	public int getEdit1() {
 		return edit1;
 	}
 
-	public void setEdit1(String edit1) {
+	public void setEdit1(int edit1) {
 		this.edit1 = edit1;
 	}
 
-	public String getEdit2() {
+	public int getEdit2() {
 		return edit2;
 	}
 
-	public void setEdit2(String edit2) {
+	public void setEdit2(int edit2) {
 		this.edit2 = edit2;
 	}
 
-	public String getList2() {
+	public int getList2() {
 		return list2;
 	}
 
-	public void setList2(String list2) {
+	public void setList2(int list2) {
 		this.list2 = list2;
 	}
 
@@ -237,11 +237,11 @@ public class ConfigurationProperties {
 		this.endtgl = endtgl;
 	}
 
-	public String getListcount() {
+	public int getListcount() {
 		return listcount;
 	}
 
-	public void setListcount(String listcount) {
+	public void setListcount(int listcount) {
 		this.listcount = listcount;
 	}
 
@@ -285,11 +285,11 @@ public class ConfigurationProperties {
 		this.tar2 = tar2;
 	}
 
-	public String getList3() {
+	public int getList3() {
 		return list3;
 	}
 
-	public void setList3(String list3) {
+	public void setList3(int list3) {
 		this.list3 = list3;
 	}
 
@@ -301,11 +301,11 @@ public class ConfigurationProperties {
 		this.filter3 = filter3;
 	}
 
-	public String getList4() {
+	public int getList4() {
 		return list4;
 	}
 
-	public void setList4(String list4) {
+	public void setList4(int list4) {
 		this.list4 = list4;
 	}
 
