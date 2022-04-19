@@ -4,8 +4,9 @@ public enum TestCases {
 
 	T1("Testing Login Downliner Valid"),
 	T2("Testing Login Downliner Invalid"),
-	T3("User tidak dapat mengisi penilaian"),
-	T4("User dapat mengisi penilaian");
+	T3("Testing Staff Set Target"),
+	T4("User tidak dapat mengisi penilaian"),
+	T5("User dapat mengisi penilaian");
 	
 	private String testName;
 	
