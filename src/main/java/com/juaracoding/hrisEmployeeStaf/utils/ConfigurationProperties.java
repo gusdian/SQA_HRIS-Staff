@@ -107,6 +107,9 @@ public class ConfigurationProperties {
 	@Value("${actResult2}")
 	private String actResult2;
 	
+	@Value("${pilih}")
+	private String pilih;
+	
 	@Value("${actResult3}")
 	private String actResult3;
 	
@@ -345,6 +348,10 @@ public class ConfigurationProperties {
 	
 	public String getActResult2() {
 		return actResult2;
+	}
+	
+	public String getPilih() {
+		return pilih;
 	}
 	
 	public String getActResult3() {
