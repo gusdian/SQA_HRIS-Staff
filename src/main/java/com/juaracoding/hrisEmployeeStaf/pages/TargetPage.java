@@ -23,7 +23,7 @@ private WebDriver driver;
 	@FindBy(xpath = "//*[@id=\\\"sidebar\\\"]/div/div[1]/ul[2]/li[9]/a")
 	WebElement ListMenu;
 	
-	@FindBy(xpath = "//*[@id=\\\"sidebar\\\"]/div/div[1]/ul[2]/li[9]/ul/li[2]/a")
+	@FindBy(xpath = "//*[@id=\\\"sidebar\\\"]/div/div[1]/ul[2]/li[9]/ul/li[1]/a")
 	WebElement ListSubMenu;
 	
 	@FindBy(css = "#table_length > label > select")
