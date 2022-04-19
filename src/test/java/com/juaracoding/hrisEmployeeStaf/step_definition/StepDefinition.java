@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import com.juaracoding.hrisEmployeeStaf.config.AutomationFrameworkConfig;
 import com.juaracoding.hrisEmployeeStaf.drivers.DriverSingleton;
 import com.juaracoding.hrisEmployeeStaf.pages.LoginPage;
+import com.juaracoding.hrisEmployeeStaf.pages.PA360Page;
 import com.juaracoding.hrisEmployeeStaf.pages.PenilaianPage;
 import com.juaracoding.hrisEmployeeStaf.utils.ConfigurationProperties;
 import com.juaracoding.hrisEmployeeStaf.utils.Constants;
@@ -33,6 +34,7 @@ public class StepDefinition {
 	private static WebDriver driver;
 	private LoginPage loginPage;
 	private PenilaianPage nilaiPage;
+	private PA360Page pa360Page;
 	
 	ExtentTest extentTest;
 	static ExtentReports reports = new ExtentReports("src/main/resources/TestReport.html");
@@ -46,6 +48,7 @@ public class StepDefinition {
 		DriverSingleton.getInstance(configProp.getBrowser());
 		loginPage = new LoginPage();
 		nilaiPage = new PenilaianPage();
+		pa360Page = new PA360Page();
 		
 		TestCases[] tests = TestCases.values();
 		extentTest = reports.startTest(tests[Utils.testCount].getTestName());
@@ -142,6 +145,58 @@ public class StepDefinition {
     	tunggu(1);
     	assertEquals(configProp.getTxtBerhasil(), nilaiPage.getTxtBerhasil());
     	extentTest.log(LogStatus.PASS, "Berhasil memberi nilai");
+    }
+    
+    //----------------------( PA360 Page )----------------------//
+    
+    @When("User klik menu PA360")
+    public void user_klik_menu_PA360() {
+    	tunggu(2);
+    	pa360Page.goToMenuPA360();
+    	extentTest.log(LogStatus.PASS, "User klik menu PA360");
+    }
+    
+    @Then("Menampilkan data PA360")
+    public void menampilkan_data_PA360() {
+    	assertEquals(configProp.getTxtPA360(), pa360Page.getTxtPA360());
+    	extentTest.log(LogStatus.PASS, "Menampilkan data PA360");
+    }
+    
+    @When("User klik Show Entries")
+    public void user_klik_showEntries_PA360() {
+    	tunggu(2);
+    	pa360Page.showRangeEntries();
+    	extentTest.log(LogStatus.PASS, "User klik Show Entries");
+    }
+    
+	@Then("Menampilkan data PA360 sesuai banyaknya data yang dipilih")
+	public void tampil_showEntries_PA360() {
+    	extentTest.log(LogStatus.PASS, "Menampilkan data PA360 sesuai banyaknya data yang dipilih");
+    }
+    
+	@When("User klik sorting pada Tabel Detail")
+	public void user_klik_sorting_PA360() {
+    	pa360Page.TableSorting();
+    	extentTest.log(LogStatus.PASS, "User klik sorting pada Tabel Detail");
+    }
+	
+	@Then("Menampilkan data PA360 secara ascending")
+	public void tampil_ascending_PA360() {
+    	tunggu(2);
+    	extentTest.log(LogStatus.PASS, "Menampilkan data PA360 secara ascending");
+    }
+	
+	@When("User search data")
+	public void user_search_PA360() {
+    	tunggu(2);
+    	pa360Page.submitSearch(configProp.getSearch());
+    	extentTest.log(LogStatus.PASS, "User search data");
+    }
+	
+	@Then("Menampilkan data yang dicari")
+	public void tampil_search_PA360() {
+    	tunggu(2);
+    	extentTest.log(LogStatus.FAIL, "Menampilkan data yang dicari");
     }
     
     public void tunggu(int detik) {
