@@ -122,32 +122,43 @@ private WebDriver driver;
 		btnEdit2.click();
 		scroll(1);
 		btnNilai3.click();
-		btnEdit3.click();
+		tunggu();
 		scroll(1);
+		btnEdit3.click();
+		tunggu();
 	}
 	
 	public void isiFormNilai(String people, String finance, String kel, String sig, String aspirasi) {
-		scroll(2);
+		scroll(1);
+		tunggu();
 		actResult1.sendKeys(people);
 		tunggu();
 		scoreP.get(3).click();
-		scroll(1);
+		tunggu();
 		actResult2.sendKeys(finance);
 		tunggu();
 		scoreF.get(3).click();
+		tunggu();
 		btnSubmit.click();
+		tunggu();
 		scroll(2);
 		actResult3.sendKeys(kel);
+		tunggu();
 		ratingB1.click();
-		scroll(1);
+		tunggu();
 		actResult4.sendKeys(sig);
+		tunggu();
 		ratingB2.click();
 		tunggu();
 		actResult5.sendKeys(sig);
+		tunggu();
 		ratingB3.click();
+		tunggu();
 		btnSubmit2.click();
+		tunggu();
 		scroll(3);
 		aspir.sendKeys(aspirasi);
+		tunggu();
 		btnSubmit3.click();
 	}
 	
