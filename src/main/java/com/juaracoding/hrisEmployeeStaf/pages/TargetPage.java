@@ -20,10 +20,10 @@ private WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//*[@id=\\\"sidebar\\\"]/div/div[1]/ul[2]/li[9]/a")
+	@FindBy(xpath = "//*[@id=\"sidebar\"]/div/div[1]/ul[2]/li[9]/a")
 	WebElement ListMenu;
 	
-	@FindBy(xpath = "//*[@id=\\\"sidebar\\\"]/div/div[1]/ul[2]/li[9]/ul/li[1]/a")
+	@FindBy(xpath = "//*[@id=\"sidebar\"]/div/div[1]/ul[2]/li[9]/ul/li[1]/a")
 	WebElement ListSubMenu;
 	
 	@FindBy(css = "#table_length > label > select")
@@ -160,6 +160,7 @@ private WebDriver driver;
 		ListEntries1.get(list1).click();
 		Filter1.sendKeys(Keys.chord(Keys.CONTROL+"a"));
 		Filter1.sendKeys(filter1);
+		Filter1.sendKeys(Keys.ENTER);
 		tunggu();
 		EditData1.get(edit1).click();
 		tunggu();
@@ -171,6 +172,7 @@ private WebDriver driver;
 		ListEntries2.get(list2).click();
 		Filter2.sendKeys(Keys.chord(Keys.CONTROL+"a"));
 		Filter2.sendKeys(filter2);
+		Filter2.sendKeys(Keys.ENTER);
 		tunggu();
 	}
 	
@@ -194,7 +196,9 @@ private WebDriver driver;
 		tunggu();
 		Parameter1.sendKeys(param1);
 		Target1.sendKeys(tar1);
+		tunggu();
 		Submit_4.click();
+		tunggu();
 		Delete.click();
 		NextTarget.click();
 		Parameter2.sendKeys(param2);
@@ -205,6 +209,7 @@ private WebDriver driver;
 		ListEntries3.get(list3).click();
 		Filter3.sendKeys(Keys.chord(Keys.CONTROL+"a"));
 		Filter3.sendKeys(filter3);
+		Filter3.sendKeys(Keys.ENTER);
 		Submit_6.click();
 		tunggu();
 		Entries4.click();
