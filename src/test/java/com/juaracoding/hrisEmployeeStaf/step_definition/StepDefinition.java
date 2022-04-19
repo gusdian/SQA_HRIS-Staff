@@ -10,6 +10,7 @@ import com.juaracoding.hrisEmployeeStaf.config.AutomationFrameworkConfig;
 import com.juaracoding.hrisEmployeeStaf.drivers.DriverSingleton;
 import com.juaracoding.hrisEmployeeStaf.pages.LoginPage;
 import com.juaracoding.hrisEmployeeStaf.pages.PenilaianPage;
+import com.juaracoding.hrisEmployeeStaf.pages.TargetPage;
 import com.juaracoding.hrisEmployeeStaf.utils.ConfigurationProperties;
 import com.juaracoding.hrisEmployeeStaf.utils.Constants;
 import com.juaracoding.hrisEmployeeStaf.utils.TestCases;
@@ -32,6 +33,7 @@ public class StepDefinition {
 
 	private static WebDriver driver;
 	private LoginPage loginPage;
+	private TargetPage targetPage;
 	private PenilaianPage nilaiPage;
 	
 	ExtentTest extentTest;
@@ -45,6 +47,7 @@ public class StepDefinition {
 	public void initializeObjects() {
 		DriverSingleton.getInstance(configProp.getBrowser());
 		loginPage = new LoginPage();
+		targetPage = new TargetPage();
 		nilaiPage = new PenilaianPage();
 		
 		TestCases[] tests = TestCases.values();
@@ -102,7 +105,35 @@ public class StepDefinition {
     	tunggu(2);
     	loginPage.submitLoginValid(configProp.getEmail(), configProp.getPassword());
     }
+
+  //----------------------( Target Page )----------------------//
+    @When("Staff Memilih Menu PA")
+    public void staff_memilih_menu_pa() {
+    	tunggu(1);
+    	targetPage.menuPA(configProp.getList(), configProp.getListSub());
+    	extentTest.log(LogStatus.PASS, "Staff Memilih Menu PA");
+    }
     
+    @Then("Staff Memilih Template Target")
+    public void staff_memilih_template_target() {
+    	tunggu(1);
+    	targetPage.IndexTarget(configProp.getList1(), configProp.getFilter1(), configProp.getEdit1(), configProp.getEdit2(), configProp.getList2(), configProp.getFilter2());
+    	extentTest.log(LogStatus.PASS, "Staff Memilih Template Target");
+    }
+    
+    @Then("Staff Set Target")
+    public void staff_set_target() {
+    	tunggu(1);
+    	targetPage.addTarget(configProp.getName(), configProp.getStarttgl(), configProp.getEndtgl(), configProp.getListcount(), configProp.getWeight(), configProp.getParam1(), configProp.getTar1(), configProp.getParam2(), configProp.getTar2(), configProp.getList3(), configProp.getFilter3(), configProp.getList4(), configProp.getFilter4());
+    	extentTest.log(LogStatus.PASS, "Staff Set Target");
+    }
+    
+    @Then("Staff Berhasil Mengisi Target")
+    public void staff_berhasil_mengisi_target() {
+    	tunggu(1);
+    	assertEquals(configProp.getTxtAssignTarget(), targetPage.getTxtassignTarget());
+    	extentTest.log(LogStatus.PASS, "Staff Berhasil Mengisi Target");
+    }
     //----------------------( Penilaian Page )----------------------//
     
     @When("User klik tombol Action")
