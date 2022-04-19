@@ -192,6 +192,8 @@ private WebDriver driver;
 		aspir.sendKeys(aspirasi);
 		tunggu();
 		btnSubmit3.click();
+		tunggu();
+		btnSimpan.click();
 	}
 	
 	public String getTxtBerhasil() {
