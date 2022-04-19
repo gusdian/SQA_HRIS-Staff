@@ -113,7 +113,7 @@ public class StepDefinition {
     @When("Staff Memilih Menu PA")
     public void staff_memilih_menu_pa() {
     	tunggu(1);
-    	targetPage.menuPA(configProp.getList(), configProp.getListSub());
+    	targetPage.menuPA();
     	extentTest.log(LogStatus.PASS, "Staff Memilih Menu PA");
     }
     

@@ -20,11 +20,11 @@ private WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//*[@class='nav'][2]/li/a")
-	List<WebElement>ListMenu;
+	@FindBy(xpath = "//*[@id=\\\"sidebar\\\"]/div/div[1]/ul[2]/li[9]/a")
+	WebElement ListMenu;
 	
-	@FindBy(xpath = "//*[@class='nav'][2]/li/ul/li")
-	List<WebElement>ListSubMenu;
+	@FindBy(xpath = "//*[@id=\\\"sidebar\\\"]/div/div[1]/ul[2]/li[9]/ul/li[2]/a")
+	WebElement ListSubMenu;
 	
 	@FindBy(css = "#table_length > label > select")
 	WebElement Entries1;
@@ -148,10 +148,10 @@ private WebDriver driver;
 	
 //	D6190874 | ADITYA RIDWAN NUGRAHA
 	
-	public void menuPA(int list, int listSub) {
+	public void menuPA() {
 		tunggu();
-		ListMenu.get(list).click();
-		ListSubMenu.get(listSub).click();
+		ListMenu.click();
+		ListSubMenu.click();
 	}
 	
 	public void IndexTarget(int list1, String filter1, int edit1, int edit2, int list2, String filter2) {
@@ -160,16 +160,22 @@ private WebDriver driver;
 		ListEntries1.get(list1).click();
 		Filter1.sendKeys(Keys.chord(Keys.CONTROL+"a"));
 		Filter1.sendKeys(filter1);
+		tunggu();
 		EditData1.get(edit1).click();
+		tunggu();
 		Mundur1.click();
+		tunggu();
 		EditData2.get(edit2).click();
+		tunggu();
 		Entries2.click();
 		ListEntries2.get(list2).click();
 		Filter2.sendKeys(Keys.chord(Keys.CONTROL+"a"));
 		Filter2.sendKeys(filter2);
+		tunggu();
 	}
 	
 	public void addTarget(String name, String starttgl, String endtgl, int listcount, String weight, String param1, String tar1, String param2, String tar2, int list3, String filter3, int list4, String filter4) {
+		tunggu();
 		AddTgt.click();
 		TargetName.sendKeys(name);
 		StartDate.sendKeys(Keys.chord(Keys.CONTROL+"a", starttgl));
@@ -181,9 +187,11 @@ private WebDriver driver;
 		ReviewCount.click();
 		ListReviewCount.get(listcount).click();
 		Submit_1.click();
+		tunggu();
 		Weight.sendKeys(weight);
 		Mundur2.click();
 		Submit_2.click();
+		tunggu();
 		Parameter1.sendKeys(param1);
 		Target1.sendKeys(tar1);
 		Submit_4.click();
@@ -192,11 +200,13 @@ private WebDriver driver;
 		Parameter2.sendKeys(param2);
 		Target2.sendKeys(tar2);
 		Submit_5.click();
+		tunggu();
 		Entries3.click();
 		ListEntries3.get(list3).click();
 		Filter3.sendKeys(Keys.chord(Keys.CONTROL+"a"));
 		Filter3.sendKeys(filter3);
 		Submit_6.click();
+		tunggu();
 		Entries4.click();
 		ListEntries4.get(list4).click();
 		Filter4.sendKeys(Keys.chord(Keys.CONTROL+"a"));
@@ -204,6 +214,7 @@ private WebDriver driver;
 		Refressh.click();
 		Mundur3.click();
 		Submit_7.click();
+		tunggu();
 		Submit_8.click();
 	}
 	
@@ -213,7 +224,7 @@ private WebDriver driver;
 	
 	public void tunggu() {
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

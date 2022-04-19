@@ -29,12 +29,6 @@ public class ConfigurationProperties {
 	@Value("${txtWrongEmailPass}")
 	private String txtWrongEmailPass;
 	
-	@Value("${list}")
-	private int list;
-	
-	@Value("${listSub}")
-	private int listSub;
-	
 	@Value("${list1}")
 	private int list1;
 	
@@ -155,22 +149,6 @@ public class ConfigurationProperties {
 		return txtWrongEmailPass;
 	}
 	
-	public int getList() {
-		return list;
-	}
-
-	public void setList(int list) {
-		this.list = list;
-	}
-
-	public int getListSub() {
-		return listSub;
-	}
-
-	public void setListSub(int listSub) {
-		this.listSub = listSub;
-	}
-
 	public int getList1() {
 		return list1;
 	}
