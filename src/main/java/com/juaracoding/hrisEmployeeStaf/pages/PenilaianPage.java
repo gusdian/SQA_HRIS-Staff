@@ -44,7 +44,7 @@ private WebDriver driver;
 	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[3]/td[1]")
 	WebElement btnNilai3;
 	
-	@FindBy(xpath = "//*[@id=\\\"table\\\"]/tbody/tr/td[3]/a")
+	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr/td[3]/a")
 	WebElement btnNilai1;
 	
 	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[4]/td/ul/li/span[2]/a")
@@ -170,30 +170,30 @@ private WebDriver driver;
 //	}
 	
 	public void isiFormNilai2(String people, String finance, String kel, String sig, String aspirasi, String pilih) {
-		scroll(1);
-		tunggu();
-		actResult1.sendKeys(people);
-		tunggu();
-		scoreP.sendKeys(pilih);
-		scoreP.sendKeys(Keys.ENTER);
-		tunggu();
-		btnSubmit.click();
-		tunggu();
-		tunggu();
-		scroll(1);
-		scroll(2);
-		actResult3.get(0).sendKeys(kel);
-		tunggu();
-		ratingB1.click();
-		tunggu();
-		btnSubmit2.click();
-		tunggu();
-		scroll(3);
-		aspir.sendKeys(aspirasi);
-		tunggu();
-		btnSubmit3.click();
-		tunggu();
-		btnSimpan.click();
+//		scroll(1);
+//		tunggu();
+//		actResult1.sendKeys(people);
+//		tunggu();
+//		scoreP.sendKeys(pilih);
+//		scoreP.sendKeys(Keys.ENTER);
+//		tunggu();
+//		btnSubmit.click();
+//		tunggu();
+//		tunggu();
+//		scroll(1);
+//		scroll(2);
+//		actResult3.get(0).sendKeys(kel);
+//		tunggu();
+//		ratingB1.click();
+//		tunggu();
+//		btnSubmit2.click();
+//		tunggu();
+//		scroll(3);
+//		aspir.sendKeys(aspirasi);
+//		tunggu();
+//		btnSubmit3.click();
+//		tunggu();
+//		btnSimpan.click();
 	}
 	
 	public String getTxtBerhasil() {
