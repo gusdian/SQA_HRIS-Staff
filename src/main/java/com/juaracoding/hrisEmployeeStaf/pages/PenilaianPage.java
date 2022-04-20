@@ -3,6 +3,7 @@ package com.juaracoding.hrisEmployeeStaf.pages;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,6 +44,9 @@ private WebDriver driver;
 	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[3]/td[1]")
 	WebElement btnNilai3;
 	
+	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr/td[3]/a")
+	WebElement btnNilai1;
+	
 	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[4]/td/ul/li/span[2]/a")
 	WebElement btnEdit3;
 	
@@ -50,7 +54,7 @@ private WebDriver driver;
 	WebElement actResult1;
 	
 	@FindBy(id="Score_People1")
-	List<WebElement> scoreP;
+	WebElement scoreP;
 	
 	@FindBy(id="rating_People")
 	WebElement ratingP;
@@ -59,7 +63,7 @@ private WebDriver driver;
 	WebElement actResult2;
 	
 	@FindBy(id="Score_Financial1")
-	List<WebElement> scoreF;
+	WebElement scoreF;
 	
 	@FindBy(id="rating_Financial")
 	WebElement ratingF;
@@ -67,21 +71,15 @@ private WebDriver driver;
 	@FindBy(xpath = "//*[@id=\"collapse1\"]/div/form/div/button")
 	WebElement btnSubmit;
 	
-	@FindBy(css ="body > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(3) > textarea:nth-child(1)")
-	WebElement actResult3;
+	@FindBy(id = "Actual_Result_Rating")
+	List<WebElement> actResult3;
 	
-	@FindBy(id="f_star_3_142")
+	@FindBy(id = "f_star_3_142")
 	WebElement ratingB1;
-	
-	@FindBy(css = "body > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(5) > tr:nth-child(1) > td:nth-child(3) > textarea:nth-child(1)")
-	WebElement actResult4;
 	
 	@FindBy(id="f_star_3_143")
 	WebElement ratingB2;
-	
-	@FindBy(css = "body > div:nth-child(5) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(6) > tr:nth-child(1) > td:nth-child(3) > textarea:nth-child(1)")
-	WebElement actResult5;
-	
+		
 	@FindBy(id="f_star_3_144")
 	WebElement ratingB3;
 	
@@ -96,6 +94,9 @@ private WebDriver driver;
 	
 	@FindBy(css = "#content > div.alert.alert-warning.alert-dismissable")
 	WebElement txtBerhasil;
+	
+	@FindBy(xpath = "//*[@id=\\\"content\\\"]/div[1]/div[3]/form/button")
+	WebElement btnSimpan;
 	
 	public void menuPenilaian() {
 		menuPA.click();
@@ -120,46 +121,79 @@ private WebDriver driver;
 	
 	public void beriNilai() {
 		btnEdit2.click();
-		scroll(1);
-		btnNilai3.click();
 		tunggu();
-		scroll(1);
-		btnEdit3.click();
-		tunggu();
+		btnNilai1.click();
+//		scroll(1);
+//		btnNilai3.click();
+//		tunggu();
+//		scroll(1);
+//		btnEdit3.click();
+//		tunggu();
 	}
 	
-	public void isiFormNilai(String people, String finance, String kel, String sig, String aspirasi) {
-		scroll(1);
-		tunggu();
-		actResult1.sendKeys(people);
-		tunggu();
-		scoreP.get(3).click();
-		tunggu();
-		actResult2.sendKeys(finance);
-		tunggu();
-		scoreF.get(3).click();
-		tunggu();
-		btnSubmit.click();
-		tunggu();
-		scroll(2);
-		actResult3.sendKeys(kel);
-		tunggu();
-		ratingB1.click();
-		tunggu();
-		actResult4.sendKeys(sig);
-		tunggu();
-		ratingB2.click();
-		tunggu();
-		actResult5.sendKeys(sig);
-		tunggu();
-		ratingB3.click();
-		tunggu();
-		btnSubmit2.click();
-		tunggu();
-		scroll(3);
-		aspir.sendKeys(aspirasi);
-		tunggu();
-		btnSubmit3.click();
+//	public void isiFormNilai(String people, String finance, String kel, String sig, String aspirasi, String pilih) {
+//		scroll(1);
+//		tunggu();
+//		actResult1.sendKeys(people);
+//		tunggu();
+//		scoreP.sendKeys(pilih);
+//		scoreP.sendKeys(Keys.ENTER);
+//		tunggu();
+//		actResult2.sendKeys(finance);
+//		tunggu();
+//		scoreF.sendKeys(pilih);
+//		scoreF.sendKeys(Keys.ENTER);
+//		tunggu();
+//		btnSubmit.click();
+//		tunggu();
+//		tunggu();
+//		scroll(1);
+//		scroll(2);
+//		actResult3.get(0).sendKeys(kel);
+//		tunggu();
+//		ratingB1.click();
+//		tunggu();
+//		actResult3.get(1).sendKeys(sig);
+//		tunggu();
+//		ratingB2.click();
+//		tunggu();
+//		actResult3.get(2).sendKeys(sig);
+//		tunggu();
+//		ratingB3.click();
+//		tunggu();
+//		btnSubmit2.click();
+//		tunggu();
+//		scroll(3);
+//		aspir.sendKeys(aspirasi);
+//		tunggu();
+//		btnSubmit3.click();
+//	}
+	
+	public void isiFormNilai2(String people, String finance, String kel, String sig, String aspirasi, String pilih) {
+//		scroll(1);
+//		tunggu();
+//		actResult1.sendKeys(people);
+//		tunggu();
+//		scoreP.sendKeys(pilih);
+//		scoreP.sendKeys(Keys.ENTER);
+//		tunggu();
+//		btnSubmit.click();
+//		tunggu();
+//		tunggu();
+//		scroll(1);
+//		scroll(2);
+//		actResult3.get(0).sendKeys(kel);
+//		tunggu();
+//		ratingB1.click();
+//		tunggu();
+//		btnSubmit2.click();
+//		tunggu();
+//		scroll(3);
+//		aspir.sendKeys(aspirasi);
+//		tunggu();
+//		btnSubmit3.click();
+//		tunggu();
+//		btnSimpan.click();
 	}
 	
 	public String getTxtBerhasil() {

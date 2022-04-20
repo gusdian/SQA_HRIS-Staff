@@ -167,7 +167,7 @@ public class StepDefinition {
     
     @Then("User mengisi penilaian")
     public void user_mengisi_penilaian() {
-    	nilaiPage.isiFormNilai(configProp.getActResult1(), configProp.getActResult2(), configProp.getActResult3(), configProp.getActResult4(), configProp.getAspir());
+    	nilaiPage.isiFormNilai2(configProp.getActResult1(), configProp.getActResult2(), configProp.getActResult3(), configProp.getActResult4(), configProp.getAspir(), configProp.getPilih());
     	extentTest.log(LogStatus.PASS, "User dapat mengisi penilaian");
     }
     
