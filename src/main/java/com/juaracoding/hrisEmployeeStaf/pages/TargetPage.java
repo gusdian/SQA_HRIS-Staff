@@ -147,8 +147,6 @@ private WebDriver driver;
 	@FindBy(css = "#tab-category2 > div > div > div > table > tbody > tr:nth-child(2) > td:nth-child(2)")
 	WebElement txtAssignTarget;
 	
-//	D6190874 | ADITYA RIDWAN NUGRAHA
-	
 	public void menuPA() {
 		tunggu();
 		ListMenu.click();
