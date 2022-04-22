@@ -24,31 +24,34 @@ private WebDriver driver;
 	WebElement menuPA;
 	
 	@FindBy(xpath = "//*[@id=\"sidebar\"]/div/div[1]/ul[2]/li[9]/ul/li[2]/a")
-	WebElement btnNilai;
+	WebElement btnIsiNilai;
 	
 	@FindBy(xpath = "//*[@id=\"content\"]/h1")
 	WebElement txtNilai;
 	
-	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[1]/td[3]/a")
-	WebElement btnEdit1;
+	@FindBy(xpath = "//*[@id=\"table_filter\"]/label/input")
+	WebElement inputSearch; //SQA
 	
-	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr/td")
-	WebElement txtKosong;
+	@FindBy(id="btnSearch")
+	WebElement btnSearch;
+	
+	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr/td[3]/a")
+	WebElement btnSQA;
 	
 	@FindBy(xpath = "//*[@id=\"content\"]/h1/a")
 	WebElement btnPrev;
 	
-	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[2]/td[3]/a")
-	WebElement btnEdit2;
+	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[3]/td[3]/a")
+	WebElement btnEdit3;
 
-	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[3]/td[1]")
-	WebElement btnNilai3;
+	@FindBy(name="Actual_Result_Text[]")
+	List<WebElement> formNilai3;
 	
 	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr/td[3]/a")
 	WebElement btnNilai1;
 	
-	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[4]/td/ul/li/span[2]/a")
-	WebElement btnEdit3;
+//	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[4]/td/ul/li/span[2]/a")
+//	WebElement btnEdit3;
 	
 	@FindBy(xpath = "//*[@id=\"collapse1\"]/div/form/div/table/tbody[1]/tr/td[3]/textarea")
 	WebElement actResult1;
@@ -100,29 +103,34 @@ private WebDriver driver;
 	
 	public void menuPenilaian() {
 		menuPA.click();
-		btnNilai.click();
+		btnIsiNilai.click();
 	}
 	
 	public String getTxtNilai() {
 		return txtNilai.getText();
 	}
+//	
+//	public void penilaianKosong() {
+//		btnEdit1.click();
+//	}
+//	
+//	public String getTxtKosong() {
+//		return txtKosong.getText();
+//	}
+//	
+//	public void Back() {
+//		btnPrev.click();
+//	}
 	
-	public void penilaianKosong() {
-		btnEdit1.click();
-	}
-	
-	public String getTxtKosong() {
-		return txtKosong.getText();
-	}
-	
-	public void Back() {
+	public void beriNilai(String filter1) {
+		inputSearch.sendKeys(filter1);
+		btnSearch.click();
+		btnSQA.click();
 		btnPrev.click();
-	}
-	
-	public void beriNilai() {
-		btnEdit2.click();
+		btnSQA.click();
+		scroll(1);
+		btnEdit3.click();
 		tunggu();
-		btnNilai1.click();
 //		scroll(1);
 //		btnNilai3.click();
 //		tunggu();
@@ -170,8 +178,8 @@ private WebDriver driver;
 //	}
 	
 	public void isiFormNilai2(String people, String finance, String kel, String sig, String aspirasi, String pilih) {
-//		scroll(1);
-//		tunggu();
+		scroll(2);
+		formNilai3.get(0).sendKeys(aspirasi);
 //		actResult1.sendKeys(people);
 //		tunggu();
 //		scoreP.sendKeys(pilih);

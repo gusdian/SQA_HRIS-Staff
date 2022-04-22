@@ -81,6 +81,9 @@ private WebDriver driver;
 	@FindBy(css = "#tab-category > div > div > div > form > div.row > div > button")
 	WebElement Submit_2;
 	
+	@FindBy(xpath = "/html/body")
+	WebElement data0;
+	
 	@FindBy(xpath = "//*[@class='btn btn-danger']")
 	WebElement Mundur2;
 	
@@ -224,6 +227,10 @@ private WebDriver driver;
 		Submit_7.click();
 		tunggu();
 		Submit_8.click();
+	}
+	
+	public String getTxtData() {
+		return data0.getText();
 	}
 	
 	public String getTxtassignTarget() {
