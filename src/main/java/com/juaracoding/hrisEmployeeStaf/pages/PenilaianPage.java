@@ -35,35 +35,35 @@ private WebDriver driver;
 	@FindBy(id="btnSearch")
 	WebElement btnSearch;
 	
-	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr/td[3]/a")
+	@FindBy(css = "#table > tbody > tr > td:nth-child(3) > a")
 	WebElement btnSQA;
 	
 	@FindBy(xpath = "//*[@id=\"content\"]/h1/a")
 	WebElement btnPrev;
 	
-	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[3]/td[3]/a")
-	WebElement btnEdit3;
+	@FindBy(css = "#table > tbody > tr.even > td:nth-child(1)")
+	WebElement btnEdit2;
+	
+	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[3]/td/ul/li/span[2]/a")
+	WebElement btnNilai2;
 
-	@FindBy(name="Actual_Result_Text[]")
-	List<WebElement> formNilai3;
+	@FindBy(xpath = "//*[@id=\"collapse1\"]/div/form/div/table/tbody[1]/tr/td[3]/textarea")
+	WebElement formNilai2;
 	
 	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr/td[3]/a")
 	WebElement btnNilai1;
 	
-//	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[4]/td/ul/li/span[2]/a")
-//	WebElement btnEdit3;
-	
 	@FindBy(xpath = "//*[@id=\"collapse1\"]/div/form/div/table/tbody[1]/tr/td[3]/textarea")
 	WebElement actResult1;
 	
-	@FindBy(id="Score_People1")
+	@FindBy(id="Score_Process1")
 	WebElement scoreP;
 	
-	@FindBy(id="rating_People")
+	@FindBy(id="rating_Process")
 	WebElement ratingP;
 	
-	@FindBy(xpath = "//*[@id=\"collapse1\"]/div/form/div/table/tbody[2]/tr/td[3]/textarea")
-	WebElement actResult2;
+	@FindBy(id = "Actual_Result")
+	List<WebElement> actResult2;
 	
 	@FindBy(id="Score_Financial1")
 	WebElement scoreF;
@@ -95,10 +95,10 @@ private WebDriver driver;
 	@FindBy(xpath = "//*[@id=\"collapse3\"]/div/form/div/button")
 	WebElement btnSubmit3;
 	
-	@FindBy(css = "#content > div.alert.alert-warning.alert-dismissable")
+	@FindBy(id="FinalObjRat")
 	WebElement txtBerhasil;
 	
-	@FindBy(xpath = "//*[@id=\\\"content\\\"]/div[1]/div[3]/form/button")
+	@FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[3]/form/button")
 	WebElement btnSimpan;
 	
 	public void menuPenilaian() {
@@ -125,11 +125,16 @@ private WebDriver driver;
 	public void beriNilai(String filter1) {
 		inputSearch.sendKeys(filter1);
 		btnSearch.click();
+		tunggu();
 		btnSQA.click();
+		tunggu();
 		btnPrev.click();
+		tunggu();
 		btnSQA.click();
 		scroll(1);
-		btnEdit3.click();
+		btnEdit2.click();
+		tunggu();
+		btnNilai2.click();
 		tunggu();
 //		scroll(1);
 //		btnNilai3.click();
@@ -179,13 +184,13 @@ private WebDriver driver;
 	
 	public void isiFormNilai2(String people, String finance, String kel, String sig, String aspirasi, String pilih) {
 		scroll(2);
-		formNilai3.get(0).sendKeys(aspirasi);
+		formNilai2.sendKeys(people);
 //		actResult1.sendKeys(people);
-//		tunggu();
-//		scoreP.sendKeys(pilih);
-//		scoreP.sendKeys(Keys.ENTER);
-//		tunggu();
-//		btnSubmit.click();
+		tunggu();
+		scoreP.sendKeys(pilih);
+		scoreP.sendKeys(Keys.ENTER);
+		tunggu();
+//		btnSubmit.click(); //kalo mau run direkam ini di uncomment
 //		tunggu();
 //		tunggu();
 //		scroll(1);
@@ -201,7 +206,7 @@ private WebDriver driver;
 //		tunggu();
 //		btnSubmit3.click();
 //		tunggu();
-//		btnSimpan.click();
+//		btnSimpan.click(); // ini juga di uncomment
 	}
 	
 	public String getTxtBerhasil() {
