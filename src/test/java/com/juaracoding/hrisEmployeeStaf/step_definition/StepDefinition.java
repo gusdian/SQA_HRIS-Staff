@@ -65,10 +65,10 @@ public class StepDefinition {
 		reports.flush();
 	}
 	
-	@AfterAll
-	public static void closeBrowser() {
-		driver.quit();
-	}
+//	@AfterAll
+//	public static void closeBrowser() {
+//		driver.quit();
+//	}
 	
 	//----------------------( Login Page )----------------------//
 	@Given("User mengakses url")
@@ -128,40 +128,42 @@ public class StepDefinition {
     public void staff_set_target() {
     	tunggu(1);
     	targetPage.addTarget(configProp.getName(), configProp.getStarttgl(), configProp.getEndtgl(), configProp.getListcount(), configProp.getWeight(), configProp.getParam1(), configProp.getTar1(), configProp.getParam2(), configProp.getTar2(), configProp.getList3(), configProp.getFilter3(), configProp.getList4(), configProp.getFilter4());
+<<<<<<< HEAD
     	extentTest.log(LogStatus.FAIL, "Staff Set Target");
+=======
+    	assertEquals("data1", targetPage.getTxtData());
+    	extentTest.log(LogStatus.PASS, "Staff Set Target");
+>>>>>>> branch 'master' of https://github.com/gusdian/SQA_HRIS-Staff
     }
     
+<<<<<<< HEAD
     @Then("Staff Berhasil Mengisi Target")
     public void staff_berhasil_mengisi_target() {
     	tunggu(1);
     	assertEquals(configProp.getTxtAssignTarget(), targetPage.getTxtassignTarget());
     	extentTest.log(LogStatus.FAIL, "Staff Berhasil Mengisi Target");
     }
+=======
+//    @Then("Staff Berhasil Mengisi Target")
+//    public void staff_berhasil_mengisi_target() {
+//    	tunggu(1);
+//    	assertEquals(configProp.getTxtAssignTarget(), targetPage.getTxtassignTarget());
+//    	extentTest.log(LogStatus.PASS, "Staff Berhasil Mengisi Target");
+//    }
+>>>>>>> branch 'master' of https://github.com/gusdian/SQA_HRIS-Staff
     //----------------------( Penilaian Page )----------------------//
     
-    @When("User klik tombol Action")
-    public void user_klik_tombol_action() {
+    
+    @When("User klik button action")
+    public void user_klik_button_action() {
     	tunggu(1);
-    	nilaiPage.menuPenilaian();;
+    	driver.navigate().back();
+    	nilaiPage.menuPenilaian();
     	tunggu(1);
     	assertEquals(configProp.getTxtNilai(), nilaiPage.getTxtNilai());
     	extentTest.log(LogStatus.PASS, "User masuk halaman penilaian");
     	tunggu(2);
-    }
-    
-    @Then("User kembali ke halaman sebelumnya")
-    public void user_kembali_ke_halaman_sebelumnya() {
-    	nilaiPage.penilaianKosong();
-    	tunggu(1);
-    	assertEquals(configProp.getTxtKosong(), nilaiPage.getTxtKosong());
-    	extentTest.log(LogStatus.PASS, "Tabel penilaian kosong");
-    	tunggu(1);
-    	nilaiPage.Back();
-    }
-    
-    @When("User klik button action")
-    public void user_klik_button_action() {
-    	nilaiPage.beriNilai();
+    	nilaiPage.beriNilai(configProp.getFilter1());
     	tunggu(2);
     }
     
