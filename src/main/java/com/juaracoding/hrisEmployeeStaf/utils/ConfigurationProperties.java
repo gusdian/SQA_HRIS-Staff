@@ -86,11 +86,11 @@ public class ConfigurationProperties {
 	@Value("${txtAssignTarget}")
 	private String txtAssignTarget;
 	
-	@Value("${txtNilai}")
-	private String txtNilai;
-	
 	@Value("${txtKosong}")
 	private String txtKosong;
+	
+	@Value("${txtNilai}")
+	private String txtNilai;
 	
 	@Value("${actResult1}")
 	private String actResult1;
@@ -344,4 +344,397 @@ public class ConfigurationProperties {
 	public String getSearch() {
 		return search;
 	}
+
+	//----------------------HRIS SPV-----------------------------------
+	
+	
+//	@Value("${browserspv}")
+//	private String browserspv;
+
+	@Value("${emailku}")
+	private String emailku;
+	
+	@Value("${password_eror}")
+	private String password_eror;
+	
+	@Value("${txtInvalidLogin}")
+	private String txtInvalidLogin;
+	
+	@Value("${emailspv}")
+	private String emailspv;
+	
+	@Value("${passwordspv}")
+	private String passwordspv;
+	
+	@Value("${txtWelcomeSPV}")
+	private String txtWelcomeSPV;
+	
+	@Value("${filterspv1}")
+	private String filterspv1;
+	
+	@Value("${namee}")
+	private String namee;
+	
+	@Value("${startDate}")
+	private String startDate;
+	
+	@Value("${endDate}")
+	private String endDate;
+	
+	@Value("${weight1}")
+	private String weight1;
+	
+	@Value("${weight2}")
+	private String weight2;
+	
+	@Value("${paramspv1}")
+	private String paramspv1;
+	
+	@Value("${tarspv1}")
+	private String tarspv1;
+	
+	@Value("${filterspv2}")
+	private String filterspv2;
+	
+//	@Value("${param2}")
+//	private String param2;
+
+//	@Value("${tar2}")
+//	private String tar2;
+	
+	@Value("${TxtSuccessApprove}")
+	private String TxtSuccessApprove;
+	
+	@Value("${filterspv3}")
+	private String filterspv3;
+	
+	@Value("${txtPenilaianPage}")
+	private String txtPenilaianPage;
+	
+	@Value("${filterspv4}")
+	private String filterspv4;
+	
+	@Value("${txtPA360Page}")
+	private String txtPA360Page;
+	
+	@Value("${src}")
+	private String src;
+	
+	@Value("${target}")
+	private String target;
+	
+	@Value("${start}")
+	private String start;
+	
+	@Value("${end}")
+	private String end;
+	
+	@Value("${persen}")
+	private String persen;
+	
+	@Value("${persen2}")
+	private String persen2;
+	
+	@Value("${diri}")
+	private String diri;
+	
+	@Value("${team}")
+	private String team;
+	
+	@Value("${s}")
+	private String s;
+	
+	@Value("${nama}")
+	private String nama;
+	
+	@Value("${txtTarget}")
+	private String txtTarget;
+	
+	@Value("${txtCekPenilaian}")
+	private String txtCekPenilaian;
+	
+	@Value("${txtActual1}")
+	private String txtActual1;
+	
+	@Value("${txtActual2}")
+	private String txtActual2;
+	
+	@Value("${txtActualRat1}")
+	private String txtActualRat1;
+	
+	@Value("${txtActualRat2}")
+	private String txtActualRat2;
+	
+	@Value("${txtAspiration}")
+	private String txtAspiration;
+	
+	@Value("${txtCekPenilaianBerhasil}")
+	private String txtCekPenilaianBerhasil;
+	
+	@Value("${searchCekPenilaian}")
+	private String searchCekPenilaian;
+
+	//----------------------Declaration Getter-----------------------------------
+	//----------------------Login Page-----------------------------------
+	public String getEmailku() {
+		return emailku;
+	}
+
+	public void setEmailku(String emailku) {
+		this.emailku = emailku;
+	}
+
+	public String getPassword_eror() {
+		return password_eror;
+	}
+
+	public void setPassword_eror(String password_eror) {
+		this.password_eror = password_eror;
+	}
+
+	public String getEmailspv() {
+		return emailspv;
+	}
+
+	public void setEmailspv(String emailspv) {
+		this.emailspv = emailspv;
+	}
+
+	public String getPasswordspv() {
+		return passwordspv;
+	}
+
+	public void setPasswordspv(String passwordspv) {
+		this.passwordspv = passwordspv;
+	}
+
+	public String getTxtInvalidLogin() {
+		return txtInvalidLogin;
+	}
+
+	public String getTxtWelcomeSPV() {
+		return txtWelcomeSPV;
+	}
+			
+	//----------------------Approve Page-----------------------------------
+
+	public String getFilterspv1() {
+		return filterspv1;
+	}
+
+	public void setFilterspv1(String filterspv1) {
+		this.filterspv1 = filterspv1;
+	}
+
+	public String getNamee() {
+		return namee;
+	}
+
+	public void setNamee(String namee) {
+		this.namee = namee;
+	}
+
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
+	public String getWeight1() {
+		return weight1;
+	}
+
+	public void setWeight1(String weight1) {
+		this.weight1 = weight1;
+	}
+
+	public String getWeight2() {
+		return weight2;
+	}
+
+	public void setWeight2(String weight2) {
+		this.weight2 = weight2;
+	}
+
+	public String getTarspv1() {
+		return tarspv1;
+	}
+
+	public void setTarspv1(String tarspv1) {
+		this.tarspv1 = tarspv1;
+	}
+
+	public String getFilterspv2() {
+		return filterspv2;
+	}
+
+	public void setFilterspv2(String filterspv2) {
+		this.filterspv2 = filterspv2;
+	}
+
+	public String getTxtSuccessApprove() {
+		return TxtSuccessApprove;
+	}
+	
+	//----------------------Approve Page-----------------------------------
+	
+	public String getFilterspv3() {
+		return filterspv3;
+	}
+
+	public void setFilterspv3(String filterspv3) {
+		this.filterspv3 = filterspv3;
+	}
+
+	public String getTxtPenilaianPage() {
+		return txtPenilaianPage;
+	}
+
+	//----------------------Approve Page-----------------------------------
+	
+	public String getFilterspv4() {
+		return filterspv4;
+	}
+
+	public void setFilterspv4(String filterspv4) {
+		this.filterspv4 = filterspv4;
+	}
+
+	public String getTxtPA360Page() {
+		return txtPA360Page;
+	}	
+	
+	//----------------------Approve Page-----------------------------------
+	
+	public String getSrc() {
+		return src;
+	}
+
+	public void setSrc(String src) {
+		this.src = src;
+	}
+
+	public String getTarget() {
+		return target;
+	}
+
+	public void setTarget(String target) {
+		this.target = target;
+	}
+
+	public String getStart() {
+		return start;
+	}
+
+	public void setStart(String start) {
+		this.start = start;
+	}
+
+	public String getEnd() {
+		return end;
+	}
+
+	public void setEnd(String end) {
+		this.end = end;
+	}
+
+	public String getPersen() {
+		return persen;
+	}
+
+	public void setPersen(String persen) {
+		this.persen = persen;
+	}
+
+	public String getPersen2() {
+		return persen2;
+	}
+
+	public void setPersen2(String persen2) {
+		this.persen2 = persen2;
+	}
+
+	public String getDiri() {
+		return diri;
+	}
+
+	public void setDiri(String diri) {
+		this.diri = diri;
+	}
+
+	public String getTeam() {
+		return team;
+	}
+
+	public void setTeam(String team) {
+		this.team = team;
+	}
+
+	public String getS() {
+		return s;
+	}
+
+	public void setS(String s) {
+		this.s = s;
+	}
+
+	public String getNama() {
+		return nama;
+	}
+
+	public void setNama(String nama) {
+		this.nama = nama;
+	}
+
+	public String getTxtTarget() {
+		return txtTarget;
+	}
+	
+	//----------------------Cek Penilaian Page-----------------------------------
+	public String getSearchCekPenilaian() {
+		return searchCekPenilaian;
+	}
+
+	public void setSearchCekPenilaian(String searchCekPenilaian) {
+		this.searchCekPenilaian = searchCekPenilaian;
+	}
+
+	public String getTxtCekPenilaian() {
+		return txtCekPenilaian;
+	}
+
+	public String getTxtActual1() {
+		return txtActual1;
+	}
+
+	public String getTxtActual2() {
+		return txtActual2;
+	}
+
+	public String getTxtActualRat1() {
+		return txtActualRat1;
+	}
+
+	public String getTxtActualRat2() {
+		return txtActualRat2;
+	}
+
+	public String getTxtAspiration() {
+		return txtAspiration;
+	}
+
+	public String getTxtCekPenilaianBerhasil() {
+		return txtCekPenilaianBerhasil;
+	}
+
 }
