@@ -128,14 +128,14 @@ public class StepDefinition {
     public void staff_set_target() {
     	tunggu(1);
     	targetPage.addTarget(configProp.getName(), configProp.getStarttgl(), configProp.getEndtgl(), configProp.getListcount(), configProp.getWeight(), configProp.getParam1(), configProp.getTar1(), configProp.getParam2(), configProp.getTar2(), configProp.getList3(), configProp.getFilter3(), configProp.getList4(), configProp.getFilter4());
-    	extentTest.log(LogStatus.PASS, "Staff Set Target");
+    	extentTest.log(LogStatus.FAIL, "Staff Set Target");
     }
     
     @Then("Staff Berhasil Mengisi Target")
     public void staff_berhasil_mengisi_target() {
     	tunggu(1);
     	assertEquals(configProp.getTxtAssignTarget(), targetPage.getTxtassignTarget());
-    	extentTest.log(LogStatus.PASS, "Staff Berhasil Mengisi Target");
+    	extentTest.log(LogStatus.FAIL, "Staff Berhasil Mengisi Target");
     }
     //----------------------( Penilaian Page )----------------------//
     
