@@ -119,8 +119,21 @@ public class ConfigurationProperties {
 	@Value("${search}")
 	private String search;
 	
+	@Value("${txtData}")
+	private String txtData;
+	
+	@Value("${txtDataa}")
+	private String txtDataa;
 //----------------------Declaration Getter-----------------------------------
 	
+	public String getTxtDataa() {
+		return txtDataa;
+	}
+	
+	public String getTxtData() {
+		return txtData;
+	}
+
 	public String getBrowser() {
 		return browser;
 	}

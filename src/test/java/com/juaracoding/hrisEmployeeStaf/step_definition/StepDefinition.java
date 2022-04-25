@@ -153,7 +153,7 @@ public class StepDefinition {
     	tunggu(1);
     	targetPage.addTarget(configProp.getName(), configProp.getStarttgl(), configProp.getEndtgl(), configProp.getListcount(), configProp.getWeight(), configProp.getParam1(), configProp.getTar1(), configProp.getParam2(), configProp.getTar2(), configProp.getList3(), configProp.getFilter3(), configProp.getList4(), configProp.getFilter4());
     	extentTest.log(LogStatus.FAIL, "Staff Set Target");
-    	assertEquals("data1", targetPage.getTxtData());
+    	assertEquals(configProp.getTxtData(), targetPage.getTxtData());
     	//extentTest.log(LogStatus.PASS, "Staff Set Target");
     }
     
@@ -292,7 +292,7 @@ public class StepDefinition {
 				tunggu(1);
 				SettargetPage.setTarget(configProp.getSrc(), configProp.getTarget(), configProp.getStart(), configProp.getEnd(), configProp.getPersen(), configProp.getPersen2());
 				extentTest.log(LogStatus.FAIL, "SPV melakukan set target");
-				assertEquals("data1", SettargetPage.getTxtDataSPV());
+				assertEquals(configProp.getTxtDataa(), SettargetPage.getTxtDataa());
 			}
 			
 			@Then("SPV set objective")
@@ -323,21 +323,21 @@ public class StepDefinition {
 		@Then("Spv Melihat Dan Mengubah Data Jika Diperlukan")
 		public void spv_melihat_dan_mengubah_data_jika_diperlukan() {
 			approvalPage.EditDataApproval(configProp.getNamee(), configProp.getStartDate(), configProp.getEndDate(), configProp.getWeight1(), configProp.getWeight2(), configProp.getParam1(), configProp.getTarspv1(), configProp.getFilterspv2());
-			extentTest.log(LogStatus.FAIL, "Spv Melihat Dan Mengubah Data Jika Diperlukan");
-			assertEquals("data1", approvalPage.getTxtDataApproval());
-		}
-		
-		@Then("Spv Berhasil Approval Target")
-		public void spv_berhasil_approval_target() {
-			assertEquals(configProp.getTxtInvalidLogin(), approvalPage.getTxtApprovalTarget());
-			extentTest.log(LogStatus.FAIL, "Spv Berhasil Approval Target");
+			extentTest.log(LogStatus.PASS, "Spv Melihat Dan Mengubah Data Jika Diperlukan");
+			assertEquals(configProp.getTxtSuccessApprove(), approvalPage.getTxtApprovalTarget());
 		}
 		
 //		@Then("Spv Berhasil Approval Target")
 //		public void spv_berhasil_approval_target() {
 //			assertEquals(configProp.getTxtInvalidLogin(), approvalPage.getTxtApprovalTarget());
-//			extentTest.log(LogStatus.PASS, "Spv Berhasil Approval Target");
+//			extentTest.log(LogStatus.FAIL, "Spv Berhasil Approval Target");
 //		}
+		
+		@Then("Spv Berhasil Approval Target")
+		public void spv_berhasil_approval_target() {
+			assertEquals(configProp.getTxtInvalidLogin(), approvalPage.getTxtApprovalTarget());
+			extentTest.log(LogStatus.PASS, "Spv Berhasil Approval Target");
+		}
 		
 		//----------------------( Isi Penilaian Page )----------------------//
 		

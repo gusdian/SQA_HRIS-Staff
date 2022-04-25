@@ -36,8 +36,11 @@ private WebDriver driver;
 	@FindBy(css = "#table_filter > label > input")
 	WebElement Filter1;
 	
-	@FindBy(css = "#table > tbody > tr > td:nth-child(3) > a")
-	WebElement EditData1;
+	@FindBy(xpath = "//*[@title='Edit Data']")
+	List<WebElement>EditData1;
+	
+//	@FindBy(css = "#table > tbody > tr > td:nth-child() > a")
+//	WebElement EditData1;
 	
 	@FindBy(xpath = "//*[@class='btn btn-danger']")
 	WebElement Mundur1;
@@ -76,13 +79,16 @@ private WebDriver driver;
 	WebElement Submit_1;
 	
 	@FindBy(id = "Weight")
-	WebElement Weight;
+	WebElement Weight1;
+	
+	@FindBy(id = "Weight")
+	List<WebElement> Weight2;
 	
 	@FindBy(css = "#tab-category > div > div > div > form > div.row > div > button")
 	WebElement Submit_2;
 	
 	@FindBy(xpath = "/html/body")
-	WebElement data0;
+	WebElement txtData;
 	
 	@FindBy(xpath = "//*[@class='btn btn-danger']")
 	WebElement Mundur2;
@@ -160,7 +166,7 @@ private WebDriver driver;
 		tunggu();
 		Entries1.click();
 		tunggu();
-		EditData1.click();
+		EditData1.get(0).click();
 		tunggu();
 		Mundur1.click();
 		tunggu();
@@ -172,6 +178,7 @@ private WebDriver driver;
 		EditData2.get(edit2).click();
 		tunggu();
 		Entries2.click();
+		tunggu();
 		ListEntries2.get(list2).click();
 		Filter2.sendKeys(Keys.chord(Keys.CONTROL+"a"));
 		Filter2.sendKeys(filter2);
@@ -193,7 +200,8 @@ private WebDriver driver;
 		ListReviewCount.get(listcount).click();
 		Submit_1.click();
 		tunggu();
-		Weight.sendKeys(weight);
+		Weight1.sendKeys(weight);
+		Weight2.get(1).sendKeys("30");
 		Submit_2.click();
 		tunggu();
 		Mundur2.click();
@@ -231,7 +239,7 @@ private WebDriver driver;
 	}
 	
 	public String getTxtData() {
-		return data0.getText();
+		return txtData.getText();
 	}
 	
 	public String getTxtassignTarget() {

@@ -20,6 +20,7 @@ private WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
+	
 	@FindBy(xpath = "//*[@id=\"sidebar\"]/div/div[1]/ul[2]/li[11]/a")
 	WebElement menuPA;
 	
@@ -123,7 +124,7 @@ private WebDriver driver;
 	WebElement txtTarget;
 	
 	@FindBy(xpath = "/html/body")
-	WebElement data0;
+	WebElement txtDataa;
 	
 	//set tgl manual di framework properties
 	
@@ -246,8 +247,8 @@ private WebDriver driver;
 		return txtTarget.getText();
 	}
 	
-	public String getTxtDataSPV() {
-		return data0.getText();
+	public String getTxtDataa() {
+		return txtDataa.getText();
 	}
 	
 	public void tunggu() {

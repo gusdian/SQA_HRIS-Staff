@@ -80,7 +80,7 @@ public class ApprovalPage {
 	@FindBy(css = "#content > h1 > a.btn.btn-success")
 	WebElement Next3;
 	
-	@FindBy(css = "#content > h1 > a")
+	@FindBy(css = "#content > h1 > a.btn.btn-danger")
 	WebElement Mundur2;
 	
 	@FindBy(css = "#content > h1 > a.btn.btn-success")
@@ -122,11 +122,8 @@ public class ApprovalPage {
 	@FindBy(css = "#tab-category > div > div > div > a")
 	WebElement ApproveTarget;
 	
-	@FindBy(css = "#content > div.alert.alert-warning.alert-dismissable")
+	@FindBy(xpath = "//*[@id=\"content\"]/div[1]")
 	WebElement TxtSuccessApprove;
-	
-	@FindBy(xpath = "/html/body")
-	WebElement data0;
 	
 	public void MenuPA() {
 		ListMenu.click();
@@ -208,10 +205,6 @@ public class ApprovalPage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-	
-	public String getTxtDataApproval() {
-		return data0.getText();
 	}
 	
 	public void scroll() {
