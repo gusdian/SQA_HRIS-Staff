@@ -415,8 +415,8 @@ public class ConfigurationProperties {
 //	@Value("${tar2}")
 //	private String tar2;
 	
-	@Value("${TxtSuccessApprove}")
-	private String TxtSuccessApprove;
+	@Value("${TxtApprovalTarget}")
+	private String TxtApprovalTarget;
 	
 	@Value("${filterspv3}")
 	private String filterspv3;
@@ -595,8 +595,8 @@ public class ConfigurationProperties {
 		this.filterspv2 = filterspv2;
 	}
 
-	public String getTxtSuccessApprove() {
-		return TxtSuccessApprove;
+	public String getTxtApprovalTarget() {
+		return TxtApprovalTarget;
 	}
 	
 	//----------------------Approve Page-----------------------------------

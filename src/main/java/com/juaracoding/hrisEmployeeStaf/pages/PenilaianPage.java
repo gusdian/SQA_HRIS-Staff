@@ -41,7 +41,7 @@ private WebDriver driver;
 	@FindBy(xpath = "//*[@id=\"content\"]/h1/a")
 	WebElement btnPrev;
 	
-	@FindBy(css = "#table > tbody > tr.even > td:nth-child(1)")
+	@FindBy(css = "#table > tbody > tr:nth-child(1) > td:nth-child(3) > a")
 	WebElement btnEdit2;
 	
 	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[3]/td/ul/li/span[2]/a")
@@ -134,8 +134,9 @@ private WebDriver driver;
 		scroll(1);
 		btnEdit2.click();
 		tunggu();
-		btnNilai2.click();
-		tunggu();
+		
+//		btnNilai2.click();
+//		tunggu();
 //		scroll(1);
 //		btnNilai3.click();
 //		tunggu();
@@ -183,13 +184,13 @@ private WebDriver driver;
 //	}
 	
 	public void isiFormNilai2(String people, String finance, String kel, String sig, String aspirasi, String pilih) {
-		scroll(2);
-		formNilai2.sendKeys(people);
+//		scroll(2);
+//		formNilai2.sendKeys(people);
 //		actResult1.sendKeys(people);
-		tunggu();
-		scoreP.sendKeys(pilih);
-		scoreP.sendKeys(Keys.ENTER);
-		tunggu();
+//		tunggu();
+//		scoreP.sendKeys(pilih);
+//		scoreP.sendKeys(Keys.ENTER);
+//		tunggu();
 //		btnSubmit.click(); //kalo mau run direkam ini di uncomment
 //		tunggu();
 //		tunggu();
@@ -211,6 +212,10 @@ private WebDriver driver;
 	
 	public String getTxtBerhasil() {
 		return txtBerhasil.getText();
+	}
+	
+	public String getxtNilai() {
+		return txtNilai.getText();
 	}
 	
 	public void tunggu() {

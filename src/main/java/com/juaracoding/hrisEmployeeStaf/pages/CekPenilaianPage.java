@@ -183,22 +183,22 @@ private WebDriver driver;
 		btnCancelQuantity.click();
 	}
 	
-	//Quality Aspect
-	public void collapseQualityAspect() {
-		JavascriptExecutor je = (JavascriptExecutor)driver;
-		je.executeScript("window.scrollBy(0,300)");
-		collapseQuality.click();
-		tunggu(2);
-		collapseQuality.click();
-	}
-	
-	public void editQualityAspect(String actualRat1) {
-		btnEditQuality.click();
-		inputActRat1.clear();
-		inputActRat1.sendKeys(actualRat1);
-		inputRat1.click();
-		btnUpdateQuality.click();
-	}
+//	//Quality Aspect
+//	public void collapseQualityAspect() {
+//		JavascriptExecutor je = (JavascriptExecutor)driver;
+//		je.executeScript("window.scrollBy(0,300)");
+//		collapseQuality.click();
+//		tunggu(2);
+//		collapseQuality.click();
+//	}
+//	
+//	public void editQualityAspect(String actualRat1) {
+//		btnEditQuality.click();
+//		inputActRat1.clear();
+//		inputActRat1.sendKeys(actualRat1);
+//		inputRat1.click();
+//		btnUpdateQuality.click();
+//	}
 	
 	public void cancelQualityAspect() {
 		JavascriptExecutor je = (JavascriptExecutor)driver;

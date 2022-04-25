@@ -123,7 +123,7 @@ public class ApprovalPage {
 	WebElement ApproveTarget;
 	
 	@FindBy(xpath = "//*[@id=\"content\"]/div[1]")
-	WebElement TxtSuccessApprove;
+	WebElement TxtApprovalTarget;
 	
 	public void MenuPA() {
 		ListMenu.click();
@@ -195,7 +195,7 @@ public class ApprovalPage {
 	}
 	
 	public String getTxtApprovalTarget() {
-	return TxtSuccessApprove.getText();	
+	return TxtApprovalTarget.getText();	
 	}
 	
 	public void tunggu() {
