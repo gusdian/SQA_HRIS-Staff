@@ -33,7 +33,7 @@ private WebDriver driver;
 	@FindBy(id="btnSearch")
 	WebElement btnSearch;
 	
-	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr/td[3]/a")
+	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[1]/td[3]/a")
 	WebElement btnEdit;
 	
 	@FindBy(xpath = "//*[@id=\"content\"]/h1/a[1]")
@@ -42,7 +42,7 @@ private WebDriver driver;
 	@FindBy(xpath = "//*[@id=\"content\"]/h1/a")
 	WebElement btnPrev2;
 	
-	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[1]/td[3]/a")
+	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr/td[3]/a")
 	WebElement btnEdit2;
 	
 	@FindBy(xpath = "//*[@id=\"content\"]/h1/a[2]")
@@ -134,7 +134,7 @@ private WebDriver driver;
 		menuSetTarget.click();
 	}
 	
-	public void setTarget(String src, String target, String start, String end, String persen, String persen2) {
+	public void setTarget(String src, String src1, String target, String start, String end, String persen, String persen2) {
 		tunggu();
 		inputTarget.sendKeys(src);
 		tunggu();
@@ -143,6 +143,9 @@ private WebDriver driver;
 		btnEdit.click();
 		tunggu();
 		btnPrev.click();
+		tunggu();
+		inputTarget.sendKeys(src1);
+		btnSearch.click();
 		tunggu();
 		btnEdit2.click();
 		tunggu();

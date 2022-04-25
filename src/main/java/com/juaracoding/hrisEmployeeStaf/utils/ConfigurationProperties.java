@@ -110,6 +110,9 @@ public class ConfigurationProperties {
 	@Value("${aspir}")
 	private String aspir;
 	
+	@Value("${src1}")
+	private String sqa;
+	
 	@Value("${txtBerhasil}")
 	private String txtBerhasil;
 	
@@ -357,6 +360,10 @@ public class ConfigurationProperties {
 	public String getSearch() {
 		return search;
 	}
+	
+	public String getSqa() {
+		return sqa;
+	}
 
 	//----------------------HRIS SPV-----------------------------------
 	
@@ -486,6 +493,7 @@ public class ConfigurationProperties {
 	
 	@Value("${searchCekPenilaian}")
 	private String searchCekPenilaian;
+	
 
 	//----------------------Declaration Getter-----------------------------------
 	//----------------------Login Page-----------------------------------

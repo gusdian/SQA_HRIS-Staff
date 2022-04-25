@@ -48,7 +48,7 @@ public class StepDefinition {
 	private PenilaianPage nilaiPage;
 	private PA360Page pa360Page;
 	private LoginPageSPV loginPageSPV;
-	private SetTargetPage SettargetPage;
+	private SetTargetPage setTargetPage;
 	private ApprovalPage approvalPage;
 	private IsiPenilaianPage isiPenilaianPage;
 	private PA360PageSPV pa360PageSPV;
@@ -69,7 +69,7 @@ public class StepDefinition {
 		nilaiPage = new PenilaianPage();
 		pa360Page = new PA360Page();
 		loginPageSPV = new LoginPageSPV();
-		SettargetPage = new SetTargetPage();
+		setTargetPage = new SetTargetPage();
 		approvalPage = new ApprovalPage();
 		isiPenilaianPage = new IsiPenilaianPage();
 		pa360PageSPV = new PA360PageSPV();
@@ -182,7 +182,7 @@ public class StepDefinition {
     	assertEquals(configProp.getTxtNilai(), nilaiPage.getTxtNilai());
     	extentTest.log(LogStatus.PASS, "User masuk halaman penilaian");
     	tunggu(2);
-    	nilaiPage.beriNilai(configProp.getFilter1());
+    	nilaiPage.beriNilai(configProp.getSrc());
     	tunggu(2);
     }
     
@@ -290,29 +290,29 @@ public class StepDefinition {
 			@When("SPV mengakses halaman set target")
 		    public void spv_mengakses_halaman_set_target() {
 		    	tunggu(1);
-		    	SettargetPage.menuPA();
+		    	setTargetPage.menuPA();
 		    	extentTest.log(LogStatus.PASS, "SPV mengakses halaman set target");
 		    }
 			
 			@Then("SPV set target")
 			public void spv_set_target() {
 				tunggu(1);
-				SettargetPage.setTarget(configProp.getSrc(), configProp.getTarget(), configProp.getStart(), configProp.getEnd(), configProp.getPersen(), configProp.getPersen2());
+				setTargetPage.setTarget(configProp.getSrc(), configProp.getSqa(), configProp.getTarget(), configProp.getStart(), configProp.getEnd(), configProp.getPersen(), configProp.getPersen2());
 				extentTest.log(LogStatus.FAIL, "SPV melakukan set target");
-				assertEquals(configProp.getTxtDataa(), SettargetPage.getTxtDataa());
+				assertEquals(configProp.getTxtDataa(), setTargetPage.getTxtDataa());
 			}
 			
 			@Then("SPV set objective")
 			public void spv_set_objective() {
 				tunggu(1);
-				SettargetPage.setObj(configProp.getTarget(), configProp.getPersen(), configProp.getPersen2(), configProp.getDiri(), configProp.getTeam(), configProp.getS(), configProp.getNama());
+				setTargetPage.setObj(configProp.getTarget(), configProp.getPersen(), configProp.getPersen2(), configProp.getDiri(), configProp.getTeam(), configProp.getS(), configProp.getNama());
 				extentTest.log(LogStatus.FAIL, "SPV melakukan set objective");
 			}
 			
 			@Then("SPV berhasil set target")
 		    public void spv_berhasil_set_target() {
 		    	tunggu(1);
-		    	assertEquals(configProp.getTxtTarget(), SettargetPage.getTxtTarget());
+		    	assertEquals(configProp.getTxtTarget(), setTargetPage.getTxtTarget());
 		    	extentTest.log(LogStatus.FAIL, "Staff Berhasil Mengisi Target");
 		    }
 		

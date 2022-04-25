@@ -21,89 +21,58 @@ private WebDriver driver;
 	}
 	
 	@FindBy(xpath = "//*[@id=\"sidebar\"]/div/div[1]/ul[2]/li[9]/a")
-	WebElement menuPA;
+	WebElement btnPA;
 	
 	@FindBy(xpath = "//*[@id=\"sidebar\"]/div/div[1]/ul[2]/li[9]/ul/li[2]/a")
-	WebElement btnIsiNilai;
+	WebElement btnIsiPenilaian;
 	
-	@FindBy(xpath = "//*[@id=\"content\"]/h1")
-	WebElement txtNilai;
+	@FindBy(css = "#table_length > label > select")
+	WebElement btnShow; //25
 	
-	@FindBy(xpath = "//*[@id=\"table_filter\"]/label/input")
-	WebElement inputSearch; //SQA
+	@FindBy(xpath = "//*[@value]")
+	List<WebElement> showRange;
+	
+	@FindBy(css = "#content > h1")
+	WebElement txtNilai; //Performance Appraisal || ISI PENILAIAN
+	
+	@FindBy(css = "#table > tbody > tr:nth-child(1) > td:nth-child(3) > a")
+	WebElement btnAction1;
+	
+	@FindBy(css = "#content > h1 > a")
+	WebElement btnPrev;
+	
+	@FindBy(css = "#table_filter > label > input")
+	WebElement inputSearch;
 	
 	@FindBy(id="btnSearch")
 	WebElement btnSearch;
 	
-	@FindBy(css = "#table > tbody > tr > td:nth-child(3) > a")
+	@FindBy(css = "#table_paginate > ul > li:nth-child(3) > a")
+	WebElement btnHal2;
+	
+	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[10]/td[3]/a")
 	WebElement btnSQA;
 	
-	@FindBy(xpath = "//*[@id=\"content\"]/h1/a")
-	WebElement btnPrev;
+	@FindBy(css = "#table > tbody > tr:nth-child(6) > td:nth-child(1)")
+	WebElement btnData6;
 	
-	@FindBy(css = "#table > tbody > tr:nth-child(1) > td:nth-child(3) > a")
-	WebElement btnEdit2;
-	
-	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr[3]/td/ul/li/span[2]/a")
-	WebElement btnNilai2;
-
-	@FindBy(xpath = "//*[@id=\"collapse1\"]/div/form/div/table/tbody[1]/tr/td[3]/textarea")
-	WebElement formNilai2;
-	
-	@FindBy(xpath = "//*[@id=\"table\"]/tbody/tr/td[3]/a")
-	WebElement btnNilai1;
-	
-	@FindBy(xpath = "//*[@id=\"collapse1\"]/div/form/div/table/tbody[1]/tr/td[3]/textarea")
-	WebElement actResult1;
-	
-	@FindBy(id="Score_Process1")
-	WebElement scoreP;
-	
-	@FindBy(id="rating_Process")
-	WebElement ratingP;
-	
-	@FindBy(id = "Actual_Result")
-	List<WebElement> actResult2;
-	
-	@FindBy(id="Score_Financial1")
-	WebElement scoreF;
-	
-	@FindBy(id="rating_Financial")
-	WebElement ratingF;
-	
-	@FindBy(xpath = "//*[@id=\"collapse1\"]/div/form/div/button")
-	WebElement btnSubmit;
-	
-	@FindBy(id = "Actual_Result_Rating")
-	List<WebElement> actResult3;
-	
-	@FindBy(id = "f_star_3_142")
-	WebElement ratingB1;
-	
-	@FindBy(id="f_star_3_143")
-	WebElement ratingB2;
-		
-	@FindBy(id="f_star_3_144")
-	WebElement ratingB3;
-	
-	@FindBy(xpath = "//*[@id=\"collapse2\"]/div/form/div/button")
-	WebElement btnSubmit2;
+	@FindBy(css = "#table > tbody > tr.child > td > ul > li > span.dtr-data > a")
+	WebElement btnAction2;
 	
 	@FindBy(xpath = "//*[@id=\"collapse3\"]/div/form/div/table/tbody/tr/td[2]/textarea")
 	WebElement aspir;
 	
 	@FindBy(xpath = "//*[@id=\"collapse3\"]/div/form/div/button")
-	WebElement btnSubmit3;
+	WebElement btnSubmit;
 	
-	@FindBy(id="FinalObjRat")
+	@FindBy(css = "#content > h1")
 	WebElement txtBerhasil;
 	
-	@FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[3]/form/button")
-	WebElement btnSimpan;
+//------------------------ Isi Penilaian --------------------------//
 	
 	public void menuPenilaian() {
-		menuPA.click();
-		btnIsiNilai.click();
+		btnPA.click();
+		btnIsiPenilaian.click();
 	}
 	
 	public String getTxtNilai() {
@@ -122,19 +91,25 @@ private WebDriver driver;
 //		btnPrev.click();
 //	}
 	
-	public void beriNilai(String filter1) {
-		inputSearch.sendKeys(filter1);
-		btnSearch.click();
+	public void beriNilai(String src) {
+		btnShow.click();
+		showRange.get(1).click();
 		tunggu();
-		btnSQA.click();
+		btnAction1.click();
 		tunggu();
 		btnPrev.click();
 		tunggu();
-		btnSQA.click();
-		scroll(1);
-		btnEdit2.click();
+		inputSearch.sendKeys(src);
+		btnSearch.click();
 		tunggu();
-		
+		btnHal2.click();
+		tunggu();
+		btnSQA.click();
+		tunggu();
+		btnData6.click();
+		tunggu();
+		btnAction2.click();
+		tunggu();
 //		btnNilai2.click();
 //		tunggu();
 //		scroll(1);
@@ -185,7 +160,7 @@ private WebDriver driver;
 	
 	public void isiFormNilai2(String people, String finance, String kel, String sig, String aspirasi, String pilih) {
 //		scroll(2);
-//		formNilai2.sendKeys(people);
+//		formNilai.sendKeys(people);
 //		actResult1.sendKeys(people);
 //		tunggu();
 //		scoreP.sendKeys(pilih);
@@ -196,26 +171,22 @@ private WebDriver driver;
 //		tunggu();
 //		scroll(1);
 //		scroll(2);
-//		actResult3.get(0).sendKeys(kel);
+//		fomNilai.get(0).sendKeys(kel);
 //		tunggu();
 //		ratingB1.click();
 //		tunggu();
 //		btnSubmit2.click();
-//		tunggu();
+		tunggu();
 //		scroll(3);
-//		aspir.sendKeys(aspirasi);
-//		tunggu();
-//		btnSubmit3.click();
+		aspir.sendKeys(aspirasi);
+		tunggu();
+//		btnSubmit.click();
 //		tunggu();
 //		btnSimpan.click(); // ini juga di uncomment
 	}
-	
+//	
 	public String getTxtBerhasil() {
 		return txtBerhasil.getText();
-	}
-	
-	public String getxtNilai() {
-		return txtNilai.getText();
 	}
 	
 	public void tunggu() {
