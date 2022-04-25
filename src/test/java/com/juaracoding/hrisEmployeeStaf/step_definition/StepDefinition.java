@@ -2,7 +2,10 @@ package com.juaracoding.hrisEmployeeStaf.step_definition;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -13,6 +16,7 @@ import com.juaracoding.hrisEmployeeStaf.pages.SetTargetPage;
 import com.juaracoding.hrisEmployeeStaf.config.AutomationFrameworkConfig;
 import com.juaracoding.hrisEmployeeStaf.drivers.DriverSingleton;
 import com.juaracoding.hrisEmployeeStaf.pages.LoginPage;
+import com.juaracoding.hrisEmployeeStaf.pages.LoginPageHRD;
 import com.juaracoding.hrisEmployeeStaf.pages.LoginPageSPV;
 import com.juaracoding.hrisEmployeeStaf.pages.PA360Page;
 import com.juaracoding.hrisEmployeeStaf.pages.PA360PageSPV;
@@ -22,6 +26,9 @@ import com.juaracoding.hrisEmployeeStaf.utils.ConfigurationProperties;
 import com.juaracoding.hrisEmployeeStaf.utils.Constants;
 import com.juaracoding.hrisEmployeeStaf.utils.TestCases;
 import com.juaracoding.hrisEmployeeStaf.utils.Utils;
+import com.juaracoding.hrisEmployeeStaf.pages.CategoryPage;
+import com.juaracoding.hrisEmployeeStaf.pages.ReportPage;
+import com.juaracoding.hrisEmployeeStaf.pages.TemplatePAPage;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -50,6 +57,10 @@ public class StepDefinition {
 	private IsiPenilaianPage isiPenilaianPage;
 	private PA360PageSPV pa360PageSPV;
 	private CekPenilaianPage cekPenilaianPage;
+	private LoginPageHRD loginPageHRD;
+	private CategoryPage Categorypage;
+	private TemplatePAPage templatePAPage;
+	private ReportPage reportPage;
 
 	ExtentTest extentTest;
 	static ExtentReports reports = new ExtentReports("src/main/resources/TestReport.html");
@@ -71,6 +82,10 @@ public class StepDefinition {
 		isiPenilaianPage = new IsiPenilaianPage();
 		pa360PageSPV = new PA360PageSPV();
 		cekPenilaianPage = new CekPenilaianPage();
+		loginPageHRD = new LoginPageHRD();
+		Categorypage = new CategoryPage();
+		templatePAPage = new TemplatePAPage();
+		reportPage = new ReportPage();
 		
 		TestCases[] tests = TestCases.values();
 		extentTest = reports.startTest(tests[Utils.testCount].getTestName());
@@ -141,7 +156,7 @@ public class StepDefinition {
     @Then("Staff Memilih Template Target")
     public void staff_memilih_template_target() {
     	tunggu(1);
-    	targetPage.IndexTarget(configProp.getList1(), configProp.getFilter1(), configProp.getEdit2(), configProp.getList2(), configProp.getFilter2());
+    	targetPage.IndexTarget(configProp.getList1(), configProp.getFilter1(), configProp.getList2(), configProp.getFilter2());
     	extentTest.log(LogStatus.PASS, "Staff Memilih Template Target");
     }
     
@@ -296,14 +311,14 @@ public class StepDefinition {
 			public void spv_set_objective() {
 				tunggu(1);
 				SettargetPage.setObj(configProp.getTarget(), configProp.getPersen(), configProp.getPersen2(), configProp.getDiri(), configProp.getTeam(), configProp.getS(), configProp.getNama());
-				extentTest.log(LogStatus.PASS, "SPV melakukan set objective");
+				extentTest.log(LogStatus.FAIL, "SPV melakukan set objective");
 			}
 			
 			@Then("SPV berhasil set target")
 		    public void spv_berhasil_set_target() {
 		    	tunggu(1);
 		    	assertEquals(configProp.getTxtTarget(), SettargetPage.getTxtTarget());
-		    	extentTest.log(LogStatus.PASS, "Staff Berhasil Mengisi Target");
+		    	extentTest.log(LogStatus.FAIL, "Staff Berhasil Mengisi Target");
 		    }
 		
 		//----------------------( Approval Target Page )----------------------//
@@ -519,7 +534,7 @@ public class StepDefinition {
 			assertEquals(configProp.getTxtPA360Page(), pa360PageSPV.getTxtPA360Page());
 			extentTest.log(LogStatus.PASS, "SPV Melihat Data Dan Sesuai");
 		}
-		
+
     public void tunggu(int detik) {
 		try {
 			Thread.sleep(detik*1000);
